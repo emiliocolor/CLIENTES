@@ -4,17 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- ===== META ROBOTS ===== -->
     <meta name="robots" content="index, follow" />
     <meta name="googlebot" content="index, follow" />
 
-    <link rel="canonical" href="https://emiliocolor.com/papeleria/libreta-a6-con-curso" />
+    <!-- ===== CANONICAL ===== -->
+    <link rel="canonical" href="https://emiliocolor.com/papeleria" />
 
-    <title>Libreta A6 70 hojas + Curso Digital · InkSpire™ | EmilioColor</title>
-    <meta name="description" content="Libreta A6 de 70 hojas (raya o punto) con curso digital incluido: robótica, electrónica, programación, manufactura y más. Elige tu curso y pide por WhatsApp." />
+    <!-- ===== TÍTULO ===== -->
+    <title>Suministros de Papelería y Oficina · InkSpire™ | EmilioColor</title>
+    <meta name="description" content="Catálogo de suministros de papelería y oficina de InkSpire™. Estilógrafos, libretas, gomas, gafetes y más, con factura y garantía." />
 
+    <!-- ===== FAVICONS ===== -->
     <link rel="icon" type="image/png" href="https://emiliocolor.com/img-logos/favicon.png" />
     <link rel="apple-touch-icon" href="https://emiliocolor.com/img-logos/favicon.png" />
 
+    <!-- ===== FUENTES E ICONOS ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
@@ -58,7 +63,6 @@
 
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
-        img { display: block; max-width: 100%; }
 
         .container {
             max-width: 1200px;
@@ -79,6 +83,7 @@
             backdrop-filter: blur(8px);
             border-bottom: 1px solid var(--border-light);
             z-index: 1000;
+            transition: 0.3s;
         }
 
         .header-content {
@@ -88,7 +93,7 @@
         }
 
         .logo { display: flex; align-items: center; gap: 10px; }
-        .logo img { height: 29px; width: auto; }
+        .logo img { height: 29px; width: auto; display: block; }
 
         nav { display: flex; align-items: center; gap: 42px; }
 
@@ -142,10 +147,10 @@
         }
 
         /* ============================================
-           BREADCRUMB / HERO
+           HERO DE CATEGORÍA
            ============================================ */
-        .page-hero {
-            padding: 34px 0 28px;
+        .cat-hero {
+            padding: 50px 0 40px;
             background: linear-gradient(135deg, #EFF6FF 0%, #FFFFFF 100%);
             border-bottom: 1px solid var(--border-light);
         }
@@ -156,529 +161,343 @@
             gap: 8px;
             font-size: 0.85rem;
             color: var(--text-muted);
+            margin-bottom: 18px;
             flex-wrap: wrap;
         }
 
         .breadcrumb a { color: var(--text-muted); transition: 0.3s; }
         .breadcrumb a:hover { color: var(--blue-primary); }
         .breadcrumb i { font-size: 0.65rem; color: #94A3B8; }
-        .breadcrumb span { color: var(--text-dark); font-weight: 500; }
 
-        /* ============================================
-           LAYOUT DEL PRODUCTO
-           ============================================ */
-        .product-layout {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-            gap: 54px;
-            align-items: start;
-            padding: 44px 0 90px;
-        }
+        .cat-head { max-width: 780px; }
 
-        /* ---------- GALERÍA ---------- */
-        .gallery {
-            position: sticky;
-            top: 96px;
-        }
-
-        .gallery-main {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            border-radius: 20px;
-            overflow: hidden;
-            background: #F1F5F9;
-            border: 1px solid var(--border-light);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .gallery-main img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform .5s ease, opacity .3s ease;
-        }
-
-        .gallery-main:hover img { transform: scale(1.05); }
-
-        .gallery-tag {
-            position: absolute;
-            top: 16px;
-            left: 16px;
-            z-index: 2;
-            background: #7C3AED;
-            color: #fff;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.6px;
-            text-transform: uppercase;
-            padding: 6px 14px;
-            border-radius: 30px;
-            box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
-            transition: opacity .3s ease;
-        }
-
-        .gallery-thumbs {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-            margin-top: 16px;
-        }
-
-        .thumb {
-            position: relative;
-            aspect-ratio: 1 / 1;
-            border-radius: 14px;
-            overflow: hidden;
-            border: 2px solid var(--border-light);
-            background: #F1F5F9;
-            cursor: pointer;
-            padding: 0;
-            transition: 0.25s;
-        }
-
-        .thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.35s;
-        }
-
-        .thumb:hover { border-color: #93C5FD; }
-        .thumb:hover img { transform: scale(1.07); }
-
-        .thumb.active {
-            border-color: var(--blue-primary);
-            box-shadow: 0 0 0 3px rgba(14, 66, 238, 0.14);
-        }
-
-        /* ---------- INFORMACIÓN ---------- */
-        .brand-line {
-            display: flex;
+        .cat-brand {
+            display: inline-flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
         }
 
-        .brand-line img { height: 26px; width: auto; }
+        .cat-brand img { height: 40px; width: auto; display: block; }
 
-        .product-cat {
-            font-size: 0.72rem;
+        .cat-head h1 {
+            font-size: 2.8rem;
             font-weight: 700;
-            letter-spacing: 0.6px;
-            text-transform: uppercase;
-            color: var(--blue-primary);
-            margin-bottom: 10px;
-        }
-
-        .info h1 {
-            font-size: 2.15rem;
-            font-weight: 700;
-            line-height: 1.18;
-            letter-spacing: -0.8px;
+            line-height: 1.15;
+            letter-spacing: -1px;
             margin-bottom: 12px;
         }
 
-        .info h1 span { color: var(--blue-primary); }
+        .cat-head h1 span { color: var(--blue-primary); }
 
-        .lede {
-            font-size: 1rem;
+        .cat-head p {
+            font-size: 1.08rem;
             color: var(--text-muted);
-            margin-bottom: 22px;
+            max-width: 640px;
         }
 
-        /* ---------- PRECIO ---------- */
-        .price-box {
+        .cat-brand-label { font-size: 0.7rem; margin-bottom: 8px; }
+
+        /* ============================================
+           BARRA DE FILTROS
+           ============================================ */
+        .catalog-bar {
             display: flex;
+            justify-content: space-between;
             align-items: center;
             gap: 16px;
             flex-wrap: wrap;
-            padding: 18px 22px;
-            background: linear-gradient(135deg, #EFF6FF 0%, #FFFFFF 100%);
-            border: 1px solid #BFDBFE;
-            border-radius: 16px;
-            margin-bottom: 26px;
-        }
-
-        .price-box .price {
-            font-size: 2.3rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            line-height: 1;
-            letter-spacing: -1.5px;
-        }
-
-        .price-box .cur {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            align-self: flex-start;
-            margin-top: 4px;
-        }
-
-        .price-box .price-note {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            margin-left: auto;
-            text-align: right;
-            max-width: 190px;
-            line-height: 1.4;
-        }
-
-        /* ---------- BLOQUES DE OPCIONES ---------- */
-        .option-block { margin-bottom: 26px; }
-
-        .option-head {
-            display: flex;
-            align-items: baseline;
-            gap: 10px;
+            padding: 22px 0 6px;
             margin-bottom: 12px;
         }
 
-        .option-head h3 {
+        .catalog-bar .count {
             font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        .option-head .hint {
-            font-size: 0.78rem;
             color: var(--text-muted);
         }
 
-        .option-head .chosen {
-            margin-left: auto;
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: var(--blue-primary);
-        }
+        .catalog-bar .count strong { color: var(--text-dark); }
 
-        /* Pills tipo de hoja */
-        .pills {
+        .catalog-bar .chips {
             display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .pill {
-            flex: 1 1 130px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 9px;
-            padding: 12px 18px;
-            border-radius: 30px;
-            background: var(--bg-white);
-            border: 1.5px solid var(--border-light);
-            font-family: var(--font);
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            cursor: pointer;
-            transition: 0.25s;
-        }
-
-        .pill:hover { border-color: #93C5FD; color: var(--blue-primary); }
-
-        .pill.active {
-            background: var(--blue-soft);
-            border-color: var(--blue-primary);
-            color: var(--blue-primary);
-            box-shadow: 0 4px 14px rgba(14, 66, 238, 0.14);
-        }
-
-        /* Chips de categoría */
-        .cat-chips {
-            display: flex;
-            gap: 9px;
+            gap: 10px;
             flex-wrap: wrap;
         }
 
         .chip {
             display: inline-flex;
             align-items: center;
-            gap: 7px;
-            padding: 8px 16px;
+            gap: 8px;
+            padding: 9px 20px;
             border-radius: 30px;
             background: var(--bg-white);
             border: 1px solid var(--border-light);
-            font-size: 0.82rem;
-            font-weight: 500;
+            font-size: 0.85rem;
             color: var(--text-muted);
             cursor: pointer;
+            transition: 0.3s;
             font-family: var(--font);
-            transition: 0.25s;
+            font-weight: 500;
         }
 
-        .chip:hover {
-            border-color: var(--blue-primary);
-            color: var(--blue-primary);
-            background: #EFF6FF;
-        }
-
+        .chip:hover,
         .chip.active {
-            background: var(--blue-primary);
+            background: var(--blue-soft);
             border-color: var(--blue-primary);
-            color: #fff;
-            font-weight: 600;
-            box-shadow: 0 4px 14px rgba(14, 66, 238, 0.25);
-        }
-
-        .chip i { font-size: 0.72rem; }
-
-        /* Lista de cursos */
-        .curso-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-height: 316px;
-            overflow-y: auto;
-            padding-right: 8px;
-            scrollbar-width: thin;
-            scrollbar-color: #CBD5E1 transparent;
-        }
-
-        .curso-list::-webkit-scrollbar { width: 7px; }
-        .curso-list::-webkit-scrollbar-track { background: transparent; }
-        .curso-list::-webkit-scrollbar-thumb {
-            background: #CBD5E1;
-            border-radius: 10px;
-        }
-        .curso-list::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
-
-        .curso-item {
-            position: relative;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 13px 16px;
-            border: 1.5px solid var(--border-light);
-            border-radius: 14px;
-            background: var(--bg-white);
-            cursor: pointer;
-            transition: 0.22s;
-        }
-
-        .curso-item:hover {
-            border-color: #93C5FD;
-            background: #F8FAFC;
-        }
-
-        .curso-item.selected {
-            border-color: var(--blue-primary);
-            background: #EFF6FF;
-            box-shadow: 0 4px 14px rgba(14, 66, 238, 0.1);
-        }
-
-        .curso-item input {
-            position: absolute;
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .curso-check {
-            flex-shrink: 0;
-            width: 21px;
-            height: 21px;
-            margin-top: 2px;
-            border-radius: 50%;
-            border: 2px solid #CBD5E1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.6rem;
-            color: transparent;
-            transition: 0.22s;
-        }
-
-        .curso-item.selected .curso-check {
-            background: var(--blue-primary);
-            border-color: var(--blue-primary);
-            color: #fff;
-        }
-
-        .curso-text {
-            display: flex;
-            flex-direction: column;
-            gap: 3px;
-            min-width: 0;
-        }
-
-        .curso-name {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            line-height: 1.35;
-        }
-
-        .curso-price {
-            font-size: 0.78rem;
-            font-weight: 600;
             color: var(--blue-primary);
+            font-weight: 600;
         }
 
-        .curso-item.selected .curso-price { color: #1E3A8A; }
+        .chip[data-filter="individual"]:hover,
+        .chip[data-filter="individual"].active {
+            background: #DCFCE7;
+            border-color: #16A34A;
+            color: #15803D;
+        }
 
-        /* Cantidad */
-        .qty-row {
+        .chip[data-filter="volumen"]:hover,
+        .chip[data-filter="volumen"].active {
+            background: #FEE2E2;
+            border-color: #E11D48;
+            color: #BE123C;
+        }
+
+        .chip i { font-size: 0.75rem; }
+
+        /* ============================================
+           GRID DE PRODUCTOS
+           ============================================ */
+        .catalog { flex: 1; padding: 20px 0 90px; }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 26px;
+        }
+
+        .product-card {
             display: flex;
-            align-items: center;
-            gap: 16px;
-            flex-wrap: wrap;
+            flex-direction: column;
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
         }
 
-        .qty {
+        .product-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--blue-primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .product-media {
+            position: relative;
+            width: 100%;
+            height: 190px;
+            overflow: hidden;
+            background: #F1F5F9;
+        }
+
+        .product-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-media img { transform: scale(1.06); }
+
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            color: #fff;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+
+        .product-badge.mayoreo { background: #E11D48; }
+        .product-badge.individual { background: #16A34A; }
+        .product-badge.pack { background: #7C3AED; }
+
+        .product-body {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 20px 20px 22px;
+        }
+
+        .product-cat {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--blue-primary);
+            margin-bottom: 6px;
+        }
+
+        .product-cat.cat-individual { color: #16A34A; }
+        .product-cat.cat-volumen { color: #E11D48; }
+
+        .product-name {
+            font-size: 1.08rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .product-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .product-price .price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1;
+        }
+
+        .product-price .price.cotizar {
+            font-size: 1.1rem;
+            color: #E11D48;
+        }
+
+        .product-price .unit {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-left: auto;
+        }
+
+        .btn-open {
             display: inline-flex;
             align-items: center;
-            border: 1.5px solid var(--border-light);
-            border-radius: 30px;
-            overflow: hidden;
-            background: var(--bg-white);
-        }
-
-        .qty button {
-            width: 42px;
-            height: 42px;
-            border: none;
-            background: transparent;
-            color: var(--text-dark);
-            font-size: 1rem;
-            cursor: pointer;
-            transition: 0.22s;
-            font-family: var(--font);
-        }
-
-        .qty button:hover { background: var(--blue-soft); color: var(--blue-primary); }
-        .qty button:disabled { opacity: .35; cursor: not-allowed; background: transparent; color: var(--text-dark); }
-
-        .qty input {
-            width: 54px;
-            height: 42px;
-            border: none;
-            text-align: center;
-            font-family: var(--font);
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            background: transparent;
-            -moz-appearance: textfield;
-        }
-
-        .qty input::-webkit-outer-spin-button,
-        .qty input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        .qty-total {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .qty-total strong { color: var(--text-dark); font-size: 1.05rem; }
-
-        /* Resumen */
-        .summary {
-            background: var(--bg-white);
-            border: 1px solid var(--border-light);
-            border-radius: 16px;
-            padding: 6px 20px;
-            margin-bottom: 22px;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .summary li {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 18px;
-            padding: 12px 0;
-            border-bottom: 1px dashed var(--border-light);
-            font-size: 0.88rem;
-        }
-
-        .summary li:last-child { border-bottom: none; }
-
-        .summary li span { color: var(--text-muted); flex-shrink: 0; }
-
-        .summary li strong {
-            color: var(--text-dark);
-            font-weight: 600;
-            text-align: right;
-        }
-
-        .summary li.total strong {
-            color: var(--blue-primary);
-            font-size: 1.25rem;
-            letter-spacing: -0.5px;
-        }
-
-        /* Botón WhatsApp */
-        .btn-wa {
-            display: flex;
-            align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 8px;
             width: 100%;
-            padding: 18px 24px;
-            border-radius: 40px;
-            background: #25D366;
+            padding: 12px 20px;
+            border-radius: 30px;
+            background: var(--blue-primary);
             color: #fff;
-            font-weight: 700;
-            font-size: 1.05rem;
+            font-weight: 600;
+            font-size: 0.9rem;
             font-family: var(--font);
             border: none;
             cursor: pointer;
             transition: 0.3s;
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+            box-shadow: 0 4px 14px rgba(14, 66, 238, 0.22);
         }
 
-        .btn-wa:hover {
+        .btn-open:hover {
+            background: #1E3A8A;
+            box-shadow: 0 8px 22px rgba(14, 66, 238, 0.35);
+        }
+
+        .btn-open.wa {
+            background: #25D366;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-open.wa:hover {
             background: #128C7E;
-            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
-            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(37, 211, 102, 0.45);
         }
 
-        .btn-wa i { font-size: 1.3rem; }
-
-        .btn-note {
-            text-align: center;
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            margin-top: 12px;
+        .btn-open.gray {
+            background: linear-gradient(135deg, #64748B 0%, #475569 100%);
+            box-shadow: 0 4px 14px rgba(71, 85, 105, 0.28);
         }
 
-        /* Ventajas */
-        .perks {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-top: 26px;
-            padding-top: 24px;
-            border-top: 1px solid var(--border-light);
+        .btn-open.gray:hover {
+            background: linear-gradient(135deg, #475569 0%, #334155 100%);
+            box-shadow: 0 8px 22px rgba(71, 85, 105, 0.45);
         }
 
-        .perk {
+        /* ============================================
+           BOTONES ESPECIALES (Libretas con curso)
+           ============================================ */
+        .product-actions {
             display: flex;
-            align-items: flex-start;
+            flex-direction: column;
             gap: 10px;
-            font-size: 0.84rem;
-            color: var(--text-muted);
-            line-height: 1.4;
         }
 
-        .perk i {
-            color: var(--blue-primary);
-            font-size: 0.95rem;
-            margin-top: 2px;
-            flex-shrink: 0;
+        .btn-open.blue {
+            background: linear-gradient(135deg, #2563EB 0%, #0e42ee 100%);
+            box-shadow: 0 4px 14px rgba(14, 66, 238, 0.28);
         }
+
+        .btn-open.blue:hover {
+            background: linear-gradient(135deg, #0e42ee 0%, #1E3A8A 100%);
+            box-shadow: 0 8px 22px rgba(14, 66, 238, 0.45);
+        }
+
+        .btn-open.soft {
+            background: #DBEAFE;
+            color: #0e42ee;
+            border: 1.5px solid #93C5FD;
+            box-shadow: none;
+        }
+
+        .btn-open.soft:hover {
+            background: #BFDBFE;
+            color: #1E3A8A;
+            border-color: var(--blue-primary);
+            box-shadow: 0 6px 18px rgba(14, 66, 238, 0.18);
+        }
+
+        .btn-open i {
+            font-size: 0.8rem;
+            transition: transform 0.3s;
+        }
+
+        .btn-open:hover i { transform: translateX(4px); }
+
+        /* ============================================
+           NOTA DE AYUDA
+           ============================================ */
+        .catalog-help {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            padding: 22px 26px;
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            max-width: 820px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .catalog-help i { color: var(--blue-primary); font-size: 1.2rem; }
+        .catalog-help p { margin: 0; font-size: 0.95rem; color: var(--text-muted); }
+        .catalog-help a { color: var(--blue-primary); font-weight: 600; }
 
         /* ============================================
            FOOTER
            ============================================ */
         footer {
-            margin-top: auto;
             padding: 28px 0;
             background: var(--bg-white);
             border-top: 1px solid var(--border-light);
@@ -702,18 +521,15 @@
            ============================================ */
         @media (max-width: 1024px) {
             nav { gap: 26px; }
-            .product-layout { gap: 36px; }
-            .info h1 { font-size: 1.85rem; }
+            .product-grid { grid-template-columns: repeat(3, 1fr); }
+            .cat-head h1 { font-size: 2.3rem; }
         }
 
-        @media (max-width: 900px) {
-            .product-layout {
-                grid-template-columns: 1fr;
-                gap: 34px;
-                padding: 30px 0 70px;
+        @media (max-width: 820px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
-            .gallery { position: static; }
-            .gallery-main { aspect-ratio: 4 / 3; }
         }
 
         @media (max-width: 768px) {
@@ -733,18 +549,23 @@
             nav.open { display: flex; }
             .hamburger { display: block; }
             .btn-outline-header { margin-left: 0; }
-            .info h1 { font-size: 1.65rem; }
-            .price-box .price { font-size: 2rem; }
-            .price-box .price-note { margin-left: 0; text-align: left; max-width: none; }
+            .cat-hero { padding: 34px 0 30px; }
+            .cat-head h1 { font-size: 1.9rem; }
+            .cat-head p { font-size: 1rem; }
+            .catalog-bar { padding-top: 18px; }
             .footer-bottom { flex-direction: column; text-align: center; }
         }
 
         @media (max-width: 520px) {
-            .gallery-main { aspect-ratio: 1 / 1; }
-            .perks { grid-template-columns: 1fr; }
-            .info h1 { font-size: 1.45rem; }
-            .chip { font-size: 0.76rem; padding: 7px 13px; }
-            .pill { flex: 1 1 100%; }
+            .product-grid {
+                grid-template-columns: 1fr;
+                max-width: 380px;
+                margin: 0 auto;
+            }
+            .product-media { height: 200px; }
+            .cat-head h1 { font-size: 1.7rem; }
+            .cat-brand img { height: 24px; }
+            .chip { font-size: 0.78rem; padding: 8px 14px; }
         }
     </style>
 </head>
@@ -756,14 +577,14 @@
     <header>
         <div class="container header-content">
             <a href="https://emiliocolor.com/" class="logo">
-                <img src="https://emiliocolor.com/img-logos/logo_azul_alargado.png" alt="EmilioColor - Grupo Comercial" />
+                <img src="https://emiliocolor.com/img-logos/logo_azul_alargado.png" alt="EmilioColor - Grupo Comercial" width="auto" height="29" />
             </a>
             <nav id="mainNav">
                 <a href="inicio.html">Área de Clientes</a>
-                <a href="inkspire.html">Catálogo</a>
+                <a href="#productos">Productos</a>
                 <a href="https://emiliocolor.com/#contact">Contacto</a>
-                <a href="inkspire.html" class="btn-outline-header">
-                    <i class="fas fa-arrow-left"></i> Volver al catálogo
+                <a href="../index.html" class="btn-outline-header">
+                    <i class="fas fa-arrow-left"></i> Volver al sitio
                 </a>
             </nav>
             <div class="hamburger" id="hamburger" role="button" aria-label="Abrir menú" tabindex="0">
@@ -773,168 +594,483 @@
     </header>
 
     <!-- ============================================
-    BREADCRUMB
+    HERO DE CATEGORÍA
     ============================================ -->
-    <section class="page-hero">
+    <section class="cat-hero">
         <div class="container">
             <div class="breadcrumb">
                 <a href="https://emiliocolor.com/">Inicio</a>
                 <i class="fas fa-chevron-right"></i>
-                <a href="inkspire.html">Suministros de papelería</a>
+                <a href="inicio.html">Área de Clientes</a>
                 <i class="fas fa-chevron-right"></i>
-                <a href="inkspire.html">Libretas</a>
-                <i class="fas fa-chevron-right"></i>
-                <span>Libreta A6 + Curso Digital</span>
+                <span>Suministros de papelería y oficina</span>
+            </div>
+
+            <div class="cat-head">
+                <p class="cat-brand-label">Marca responsable de este servicio:</p>
+                <div class="cat-brand">
+                    <img src="https://emiliocolor.com/img_marcas/inkspire_logo.png" alt="Inkspire™" />
+                </div>
+                <h1>Suministros de <span>papelería y oficina</span></h1>
+                <p>
+                    Todo lo que tu oficina, escuela o negocio necesita. Estilógrafos, libretas,
+                    gomas, gafetes y más, con factura, garantía y entrega confiable.
+                </p>
             </div>
         </div>
     </section>
 
     <!-- ============================================
-    PRODUCTO
+    CATÁLOGO DE PRODUCTOS
     ============================================ -->
-    <main>
+    <main class="catalog" id="productos">
         <div class="container">
-            <div class="product-layout">
 
-                <!-- ---------- GALERÍA ---------- -->
-                <div class="gallery">
-                    <div class="gallery-main">
-                        <span class="gallery-tag" id="galleryTag">Incluye curso digital</span>
-                        <img id="mainImage"
-                             src="img_inkspire/1raya_a6.jpg"
-                             alt="Libreta A6 de 70 hojas con curso digital incluido" />
-                    </div>
-
-                    <!-- Los thumbnails se generan dinámicamente desde JS -->
-                    <div class="gallery-thumbs" id="thumbs"></div>
+            <div class="catalog-bar">
+                <div class="count">
+                    Mostrando <strong>26 productos</strong> disponibles
                 </div>
-
-                <!-- ---------- INFORMACIÓN ---------- -->
-                <div class="info">
-
-                    <div class="brand-line">
-                        <img src="https://emiliocolor.com/img_marcas/inkspire_logo.png" alt="InkSpire™" />
-                    </div>
-
-                    <div class="product-cat">Libretas · Venta Individual</div>
-
-                    <h1>Libreta A6 70 hojas <span>con/sin</span> Curso Digital</h1>
-
-                    <p class="lede">
-                        Elige el tipo de hoja, selecciona el curso digital que quieras y recíbelo
-                        al instante. Una libreta, cientos de posibilidades.
-                    </p>
-
-                    <!-- PRECIO -->
-                    <div class="price-box">
-                        <span class="price" id="priceValue">$25.00</span>
-                        <span class="cur">MXN</span>
-                        <span class="price-note" id="priceNote">Libreta sin curso · precio por pieza</span>
-                    </div>
-
-                    <!-- TIPO DE HOJA -->
-                    <div class="option-block">
-                        <div class="option-head">
-                            <h3>Tipo de hoja</h3>
-                            <span class="hint">Elige cómo quieres tus hojas</span>
-                        </div>
-                        <div class="pills" id="hojaPills">
-                            <button type="button" class="pill active" data-hoja="Raya">
-                                <i class="fas fa-bars"></i> Raya
-                            </button>
-                            <button type="button" class="pill" data-hoja="Punto">
-                                <i class="fas fa-braille"></i> Punto
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- CATEGORÍA DEL CURSO -->
-                    <div class="option-block">
-                        <div class="option-head">
-                            <h3>Categoría del curso</h3>
-                        </div>
-                        <div class="cat-chips" id="catList"></div>
-                    </div>
-
-                    <!-- CURSO -->
-                    <div class="option-block">
-                        <div class="option-head">
-                            <h3>Selecciona tu curso</h3>
-                            <span class="chosen" id="cursoChosen"></span>
-                        </div>
-                        <div class="curso-list" id="cursoList"></div>
-                    </div>
-
-                    <!-- CANTIDAD -->
-                    <div class="option-block">
-                        <div class="option-head">
-                            <h3>Cantidad</h3>
-                        </div>
-                        <div class="qty-row">
-                            <div class="qty">
-                                <button type="button" id="qtyMinus" aria-label="Quitar una pieza">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                                <input type="number" id="qtyInput" value="1" min="1" max="99" aria-label="Cantidad" />
-                                <button type="button" id="qtyPlus" aria-label="Agregar una pieza">
-                                    <i class="fas fa-plus"></i>
-                                </button>
-                            </div>
-                            <span class="qty-total">Total: <strong id="qtyTotal">$25.00 MXN</strong></span>
-                        </div>
-                    </div>
-
-                    <!-- RESUMEN -->
-                    <ul class="summary">
-                        <li>
-                            <span>Tipo de hoja</span>
-                            <strong id="sumHoja">Raya</strong>
-                        </li>
-                        <li>
-                            <span>Curso digital</span>
-                            <strong id="sumCurso">Sin curso digital</strong>
-                        </li>
-                        <li>
-                            <span>Piezas</span>
-                            <strong id="sumCantidad">1</strong>
-                        </li>
-                        <li class="total">
-                            <span>Total</span>
-                            <strong id="sumTotal">$25.00 MXN</strong>
-                        </li>
-                    </ul>
-
-                    <!-- BOTÓN WHATSAPP -->
-                    <a class="btn-wa" id="waButton" href="#" target="_blank" rel="noopener">
-                        <i class="fab fa-whatsapp"></i>
-                        Pedir por WhatsApp
-                    </a>
-                    <p class="btn-note">
-                        Te confirmamos disponibilidad, forma de pago y envío por WhatsApp.
-                    </p>
-
-                    <!-- VENTAJAS -->
-                    <div class="perks">
-                        <div class="perk">
-                            <i class="fas fa-file-invoice"></i>
-                            <span>Factura disponible en todas tus compras</span>
-                        </div>
-                        <div class="perk">
-                            <i class="fas fa-shield-halved"></i>
-                            <span>Garantía y producto original InkSpire™</span>
-                        </div>
-                        <div class="perk">
-                            <i class="fas fa-bolt"></i>
-                            <span>Acceso al curso digital al confirmar tu compra</span>
-                        </div>
-                        <div class="perk">
-                            <i class="fas fa-truck-fast"></i>
-                            <span>Entregas y envíos a todo México</span>
-                        </div>
-                    </div>
-
+                <div class="chips">
+                    <span class="chip active" data-filter="todos"><i class="fas fa-th-large"></i> Todos</span>
+                    <span class="chip" data-filter="individual"><i class="fas fa-shopping-bag"></i> Venta Individual</span>
+                    <span class="chip" data-filter="volumen"><i class="fas fa-boxes-stacked"></i> Venta en Volumen</span>
                 </div>
             </div>
+
+            <div class="product-grid" id="productGrid">
+
+                <!-- ===================================================
+                     VENTA INDIVIDUAL (primero)
+                     =================================================== -->
+
+                <!-- Estampa Personalizable -->
+                <article class="product-card" data-cat="accesorios" data-mayoreo="false" data-tipo="individual">
+                    <div class="product-media">
+                        <span class="product-badge individual">Individual</span>
+                        <img src="img_inkspire/estampas_estilografos.png" alt="Estampa personalizable para estilógrafo" loading="lazy" />
+                    </div>
+                    <div class="product-body">
+                        <div class="product-cat cat-individual">Accesorios · Venta Individual</div>
+                        <h2 class="product-name">Estampa Personalizable para Estilógrafo</h2>
+                        <p class="product-desc">Diseño personalizable con tamaños y formatos estandarizados.</p>
+                        <div class="product-price">
+                            <span class="price">$15.00</span>
+                            <span class="unit">MXN</span>
+                        </div>
+                        <a class="btn-open wa" href="https://wa.me/525655333139?text=Hola%2C%20me%20interesa%20comprar%20una%20Estampa%20Personalizable%20para%20Estil%C3%B3grafo." target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
+                        </a>
+                    </div>
+                </article>
+
+                <!-- 9 Estilógrafos de Colores -->
+                <article class="product-card" data-cat="escritura" data-mayoreo="false" data-tipo="individual">
+                    <div class="product-media">
+                        <span class="product-badge individual">Individual</span>
+                        <img src="img_inkspire/pluma_paquete_9.png" alt="9 estilógrafos de colores" loading="lazy" />
+                    </div>
+                    <div class="product-body">
+                        <div class="product-cat cat-individual">Escritura · Venta Individual</div>
+                        <h2 class="product-name">9 Estilógrafos de Colores</h2>
+                        <p class="product-desc">Incluye 9 estilógrafos de diferentes colores, ideales para escritura, dibujo y trabajos escolares.</p>
+                        <div class="product-price">
+                            <span class="price">$90.00</span>
+                            <span class="unit">MXN</span>
+                        </div>
+                        <a class="btn-open wa" href="https://wa.me/525655333139?text=Hola%2C%20me%20interesa%20comprar%209%20Estil%C3%B3grafos%20de%20Colores." target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
+                        </a>
+                    </div>
+                </article>
+
+                <!-- 3 Estilógrafos de Tinta Líquida -->
+                <article class="product-card" data-cat="escritura" data-mayoreo="false" data-tipo="individual">
+                    <div class="product-media">
+                        <span class="product-badge individual">Individual</span>
+                        <img src="img_inkspire/pluma_paquete_3.png" alt="Lote de 3 estilógrafos de tinta líquida 0.5mm" loading="lazy" />
+                    </div>
+                    <div class="product-body">
+                        <div class="product-cat cat-individual">Escritura · Venta Individual</div>
+                        <h2 class="product-name">3 Estilógrafos de Tinta Líquida 0.5mm</h2>
+                        <p class="product-desc">Incluye 3 estilógrafos de tinta líquida 0.5mm: uno azul, uno rojo y uno negro.</p>
+                        <div class="product-price">
+                            <span class="price">$30.00</span>
+                            <span class="unit">MXN</span>
+                        </div>
+                        <a class="btn-open wa" href="https://wa.me/525655333139?text=Hola%2C%20me%20interesa%20comprar%203%20Estil%C3%B3grafos%20de%20Tinta%20L%C3%ADquida%200.5mm." target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Libreta A6 Raya (individual) -->
+                <article class="product-card" data-cat="libretas" data-mayoreo="false" data-tipo="individual">
+                    <div class="product-media">
+                        <span class="product-badge individual">Individual</span>
+                        <img src="img_inkspire/1raya_a6.jpg" alt="Libreta A6 70 hojas raya" loading="lazy" />
+                    </div>
+                    <div class="product-body">
+                        <div class="product-cat cat-individual">Libretas · Venta Individual</div>
+                        <h2 class="product-name">Libreta A6 70 hojas Raya</h2>
+                        <p class="product-desc">Ideal para apuntes. Incluye curso de tu elección.</p>
+                        <div class="product-price">
+                            <span class="price">$25.00</span>
+                            <span class="unit">MXN</span>
+                        </div>
+                        <div class="product-actions">
+                            <a class="btn-open blue" href="libretas_a6_curso.html">
+                                <i class="fas fa-cart-shopping"></i> Comprar
+                            </a>
+                            <a class="btn-open soft" href="libretas_a6_curso.html">
+                                <i class="fas fa-graduation-cap"></i> Libretas con curso
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Libreta A6 Punto (individual) -->
+                <article class="product-card" data-cat="libretas" data-mayoreo="false" data-tipo="individual">
+                    <div class="product-media">
+                        <span class="product-badge individual">Individual</span>
+                        <img src="img_inkspire/1punto_a6.jpg" alt="Libreta A6 70 hojas punto" loading="lazy" />
+                    </div>
+                    <div class="product-body">
+                        <div class="product-cat cat-individual">Libretas · Venta Individual</div>
+                        <h2 class="product-name">Libreta A6 70 hojas Punto</h2>
+                        <p class="product-desc">Perfecta para dibujo. Incluye curso de tu elección.</p>
+                        <div class="product-price">
+                            <span class="price">$25.00</span>
+                            <span class="unit">MXN</span>
+                        </div>
+                        <div class="product-actions">
+                            <a class="btn-open blue" href="libretas_a6_curso.html">
+                                <i class="fas fa-cart-shopping"></i> Comprar
+                            </a>
+                            <a class="btn-open soft" href="libretas_a6_curso.html">
+                                <i class="fas fa-graduation-cap"></i> Libretas con curso
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Borrador con Estampa -->
+                <article class="product-card" data-cat="accesorios" data-mayoreo="false" data-tipo="individual">
+                    <div class="product-media">
+                        <span class="product-badge individual">Individual</span>
+                        <img src="img_inkspire/goma.png" alt="Borrador con estampa personalizable" loading="lazy" />
+                    </div>
+                    <div class="product-body">
+                        <div class="product-cat cat-individual">Accesorios · Venta Individual</div>
+                        <h2 class="product-name">Borrador con Estampa Personalizable</h2>
+                        <p class="product-desc">Tamaños y formatos estandarizados.</p>
+                        <div class="product-price">
+                            <span class="price">$20.00</span>
+                            <span class="unit">MXN</span>
+                        </div>
+                        <a class="btn-open wa" href="https://wa.me/525655333139?text=Hola%2C%20me%20interesa%20comprar%20un%20Borrador%20con%20Estampa%20Personalizable." target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Bolígrafos de Escritorio -->
+                <article class="product-card" data-cat="escritura" data-mayoreo="false" data-tipo="individual">
+                    <div class="product-media">
+                        <span class="product-badge individual">Individual</span>
+                        <img src="img_inkspire/pluma_mesa.png" alt="Bolígrafos de escritorio" loading="lazy" />
+                    </div>
+                    <div class="product-body">
+                        <div class="product-cat cat-individual">Escritura · Venta Individual</div>
+                        <h2 class="product-name">Bolígrafos de Escritorio</h2>
+                        <p class="product-desc">Colores azul y rojo.</p>
+                        <div class="product-price">
+                            <span class="price">$30.00</span>
+                            <span class="unit">MXN</span>
+                        </div>
+                        <a class="btn-open wa" href="https://wa.me/525655333139?text=Hola%2C%20me%20interesan%20los%20Bol%C3%ADgrafos%20de%20Escritorio." target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Gafete de Listón -->
+                <article class="product-card" data-cat="accesorios" data-mayoreo="false" data-tipo="individual">
+                    <div class="product-media">
+                        <span class="product-badge individual">Individual</span>
+                        <img src="img_inkspire/gafete.png" alt="Gafete de listón grueso" loading="lazy" />
+                    </div>
+                    <div class="product-body">
+                        <div class="product-cat cat-individual">Accesorios · Venta Individual</div>
+                        <h2 class="product-name">Gafete de Listón Grueso</h2>
+                        <p class="product-desc">Colores azul y negro.</p>
+                        <div class="product-price">
+                            <span class="price">$12.00</span>
+                            <span class="unit">MXN</span>
+                        </div>
+                        <a class="btn-open wa" href="https://wa.me/525655333139?text=Hola%2C%20me%20interesa%20comprar%20un%20Gafete%20de%20List%C3%B3n%20Grueso." target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
+                        </a>
+                    </div>
+                </article>
+
+                <!-- ===================================================
+                     VENTA EN VOLUMEN (después)
+                     =================================================== -->
+
+                <!-- Estilógrafo Negro Volumen -->
+                <article class="product-card" data-cat="escritura" data-mayoreo="true" data-tipo="volumen">
+                    <div class="product-media">
+                        <span class="product-badge mayoreo">Volumen</span>
+                        <img src="img_inkspire/mayoreo_pluma_negra.png" alt="Estilógrafo tinta líquida 0.5mm color negro" loading="lazy" />
+                    </div>
+                    <div class="product-body">
+                        <div class="product-cat cat-volumen">Escritura · Venta en Volumen</div>
+                        <h2 class="product-name">Lote de 10 Estilógrafos Tinta Líquida 0.5mm · Negro</h2>
+                        <p class="product-desc">Escritura suave de secado rápido, no rompe la tinta. Precio especial por volumen.</p>
+                        <div class="product-price">
+                            <span class="price cotizar">Cotizar</span>
+                            <span class="unit">Volumen</span>
+                        </div>
+                        <a class="btn-open gray" href="producto.html?id=1">
+                            <i class="fas fa-search"></i> Consultar Producto
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Estilógrafo Azul Volumen -->
+                <article class="product-card" data-cat="escritura" data-mayoreo="true" data-tipo="volumen">
+                    <div class="product-media">
+                        <span class="product-badge mayoreo">Volumen</span>
+                        <img src="img_inkspire/mayoreo_pluma_azul.png" alt="Estilógrafo tinta líquida 0.5mm color azul" loading="lazy" />
+                    </div>
+                    <div class="product-body">
+                        <div class="product-cat cat-volumen">Escritura · Venta en Volumen</div>
+                        <h2 class="product-name">Lote de 10 Estilógrafos Tinta Líquida 0.5mm · Azul</h2>
+                        <p class="product-desc">Escritura suave de secado rápido, no rompe la tinta. Precio especial por volumen.</p>
+                        <div class="product-price">
+                            <span class="price cotizar">Cotizar</span>
+                            <span class="unit">Volumen</span>
+                        </div>
+                        <a class="btn-open gray" href="producto.html?id=2">
+                            <i class="fas fa-search"></i> Consultar Producto
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Estilógrafo Rojo Volumen -->
+                <article class="product-card" data-cat="escritura" data-mayoreo="true" data-tipo="volumen">
+                    <div class="product-media">
+                        <span class="product-badge mayoreo">Volumen</span>
+                        <img src="img_inkspire/mayoreo_pluma_roja.png" alt="Estilógrafo tinta líquida 0.5mm color rojo" loading="lazy" />
+                    </div>
+                    <div class="product-body">
+                        <div class="product-cat cat-volumen">Escritura · Venta en Volumen</div>
+                        <h2 class="product-name">Lote de 10 Estilógrafos Tinta Líquida 0.5mm · Rojo</h2>
+                        <p class="product-desc">Escritura suave de secado rápido, no rompe la tinta. Precio especial por volumen.</p>
+                        <div class="product-price">
+                            <span class="price cotizar">Cotizar</span>
+                            <span class="unit">Volumen</span>
+                        </div>
+                        <a class="btn-open gray" href="producto.html?id=3">
+                            <i class="fas fa-search"></i> Consultar Producto
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Lote de 12 Estilógrafos -->
+                <article class="product-card" data-cat="escritura" data-mayoreo="true" data-tipo="volumen">
+                    <div class="product-media">
+                        <span class="product-badge mayoreo">Volumen</span>
+                        <img src="img_inkspire/pluma_paquete_12.jpg" alt="Lote de 12 estilógrafos: 9 de colores y 3 de tinta líquida 0.5mm" loading="lazy" />
+                    </div>
+                    <div class="product-body">
+                        <div class="product-cat cat-volumen">Escritura · Venta en Volumen</div>
+                        <h2 class="product-name">Lote de 12 Estilógrafos: 9 de Colores y 3 de Tinta Líquida 0.5mm</h2>
+                        <p class="product-desc">Incluye 9 estilógrafos de colores y 3 de tinta líquida 0.5mm: uno azul, uno rojo y uno negro. Precio especial por volumen.</p>
+                        <div class="product-price">
+                            <span class="price cotizar">Cotizar</span>
+                            <span class="unit">Volumen</span>
+                        </div>
+                        <a class="btn-open gray" href="producto.html?id=4">
+                            <i class="fas fa-search"></i> Consultar Producto
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Lote 5 Libretas PROGRAMACIÓN -->
+                <article class="product-card" data-cat="libretas" data-mayoreo="true" data-tipo="volumen">
+                    <div class="product-media">
+                        <span class="product-badge mayoreo">Volumen</span>
+                        <img src="img_inkspire/a6_programacion.jpeg" alt="Libreta A6 variadas con curso de programación" loading="lazy" />
+                    </div>
+                    <div class="product-body">
+                        <div class="product-cat cat-volumen">Libretas · Venta en Volumen</div>
+                        <h2 class="product-name">Lote de 5 Libretas A6 variadas con curso de PROGRAMACIÓN</h2>
+                        <p class="product-desc">Libretas A6 (raya o punto) + acceso a curso digital gratuito. Pack especial.</p>
+                        <div class="product-price">
+                            <span class="price cotizar">Cotizar</span>
+                            <span class="unit">Volumen</span>
+                        </div>
+                        <a class="btn-open gray" href="producto.html?id=6">
+                            <i class="fas fa-search"></i> Consultar Producto
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Lote 5 Libretas Raya -->
+                <article class="product-card" data-cat="libretas" data-mayoreo="true" data-tipo="volumen">
+                    <div class="product-media">
+                        <span class="product-badge mayoreo">Volumen</span>
+                        <img src="img_inkspire/raya_a6.png" alt="Lote de 5 libretas A6 raya" loading="lazy" />
+                    </div>
+                    <div class="product-body">
+                        <div class="product-cat cat-volumen">Libretas · Venta en Volumen</div>
+                        <h2 class="product-name">Lote de 5 Libretas A6 · Raya</h2>
+                        <p class="product-desc">Libretas A6 con 70 hojas rayadas. Precio especial por volumen para tu negocio.</p>
+                        <div class="product-price">
+                            <span class="price cotizar">Cotizar</span>
+                            <span class="unit">Volumen</span>
+                        </div>
+                        <a class="btn-open gray" href="producto.html?id=7">
+                            <i class="fas fa-search"></i> Consultar Producto
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Lote 5 Libretas Punto -->
+                <article class="product-card" data-cat="libretas" data-mayoreo="true" data-tipo="volumen">
+                    <div class="product-media">
+                        <span class="product-badge mayoreo">Volumen</span>
+                        <img src="img_inkspire/punto_a6.png" alt="Lote de 5 libretas A6 punto" loading="lazy" />
+                    </div>
+                    <div class="product-body">
+                        <div class="product-cat cat-volumen">Libretas · Venta en Volumen</div>
+                        <h2 class="product-name">Lote de 5 Libretas A6 · Punto</h2>
+                        <p class="product-desc">Libretas A6 con 70 hojas punteadas. Perfectas para bocetos y bullet journal.</p>
+                        <div class="product-price">
+                            <span class="price cotizar">Cotizar</span>
+                            <span class="unit">Volumen</span>
+                        </div>
+                        <a class="btn-open gray" href="producto.html?id=8">
+                            <i class="fas fa-search"></i> Consultar Producto
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Lote 5 Libretas ROBÓTICA -->
+                <article class="product-card" data-cat="libretas" data-mayoreo="true" data-tipo="volumen">
+                    <div class="product-media">
+                        <span class="product-badge mayoreo">Volumen</span>
+                        <img src="img_inkspire/a6_robotica.JPG" alt="Lote de 5 libretas con curso de robótica" loading="lazy" />
+                    </div>
+                    <div class="product-body">
+                        <div class="product-cat cat-volumen">Libretas · Venta en Volumen</div>
+                        <h2 class="product-name">Lote de 5 Libretas A6 con curso de ROBÓTICA</h2>
+                        <p class="product-desc">Libretas A6 + acceso a curso digital de robótica y microcontroladores. Pack especial.</p>
+                        <div class="product-price">
+                            <span class="price cotizar">Cotizar</span>
+                            <span class="unit">Volumen</span>
+                        </div>
+                        <a class="btn-open gray" href="producto.html?id=9">
+                            <i class="fas fa-search"></i> Consultar Producto
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Lote 5 Libretas ELECTRÓNICA -->
+                <article class="product-card" data-cat="libretas" data-mayoreo="true" data-tipo="volumen">
+                    <div class="product-media">
+                        <span class="product-badge mayoreo">Volumen</span>
+                        <img src="img_inkspire/a6_electronica.JPG" alt="Lote de 5 libretas con curso de electrónica" loading="lazy" />
+                    </div>
+                    <div class="product-body">
+                        <div class="product-cat cat-volumen">Libretas · Venta en Volumen</div>
+                        <h2 class="product-name">Lote de 5 Libretas A6 con curso de ELECTRÓNICA</h2>
+                        <p class="product-desc">Libretas A6 + acceso a curso digital de electrónica analógica y digital. Pack especial.</p>
+                        <div class="product-price">
+                            <span class="price cotizar">Cotizar</span>
+                            <span class="unit">Volumen</span>
+                        </div>
+                        <a class="btn-open gray" href="producto.html?id=10">
+                            <i class="fas fa-search"></i> Consultar Producto
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Lote 5 Libretas COMPLEMENTOS -->
+                <article class="product-card" data-cat="libretas" data-mayoreo="true" data-tipo="volumen">
+                    <div class="product-media">
+                        <span class="product-badge mayoreo">Volumen</span>
+                        <img src="img_inkspire/a6_complementos.JPG" alt="Lote de 5 libretas con curso de complementos" loading="lazy" />
+                    </div>
+                    <div class="product-body">
+                        <div class="product-cat cat-volumen">Libretas · Venta en Volumen</div>
+                        <h2 class="product-name">Lote de 5 Libretas A6 con curso de COMPLEMENTOS</h2>
+                        <p class="product-desc">Libretas A6 + acceso a curso digital de complementos y materiales. Pack especial.</p>
+                        <div class="product-price">
+                            <span class="price cotizar">Cotizar</span>
+                            <span class="unit">Volumen</span>
+                        </div>
+                        <a class="btn-open gray" href="producto.html?id=11">
+                            <i class="fas fa-search"></i> Consultar Producto
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Lote 5 Libretas MANUFACTURA -->
+                <article class="product-card" data-cat="libretas" data-mayoreo="true" data-tipo="volumen">
+                    <div class="product-media">
+                        <span class="product-badge mayoreo">Volumen</span>
+                        <img src="img_inkspire/a6_manufactura.JPG" alt="Lote de 5 libretas con curso de manufactura" loading="lazy" />
+                    </div>
+                    <div class="product-body">
+                        <div class="product-cat cat-volumen">Libretas · Venta en Volumen</div>
+                        <h2 class="product-name">Lote de 5 Libretas A6 con curso de MANUFACTURA</h2>
+                        <p class="product-desc">Libretas A6 + acceso a curso digital de manufactura y procesos industriales.</p>
+                        <div class="product-price">
+                            <span class="price cotizar">Cotizar</span>
+                            <span class="unit">Volumen</span>
+                        </div>
+                        <a class="btn-open gray" href="producto.html?id=12">
+                            <i class="fas fa-search"></i> Consultar Producto
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Lote 5 Libretas GENERALES -->
+                <article class="product-card" data-cat="libretas" data-mayoreo="true" data-tipo="volumen">
+                    <div class="product-media">
+                        <span class="product-badge mayoreo">Volumen</span>
+                        <img src="img_inkspire/a6_generales.JPG" alt="Lote de 5 libretas con cursos generales" loading="lazy" />
+                    </div>
+                    <div class="product-body">
+                        <div class="product-cat cat-volumen">Libretas · Venta en Volumen</div>
+                        <h2 class="product-name">Lote de 5 Libretas A6 con cursos GENERALES</h2>
+                        <p class="product-desc">Libretas A6 + acceso a cursos digitales generales: Office, inglés, Excel y más.</p>
+                        <div class="product-price">
+                            <span class="price cotizar">Cotizar</span>
+                            <span class="unit">Volumen</span>
+                        </div>
+                        <a class="btn-open gray" href="producto.html?id=13">
+                            <i class="fas fa-search"></i> Consultar Producto
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Nota de ayuda -->
+            <div class="catalog-help">
+                <i class="fas fa-circle-info"></i>
+                <p>
+                    ¿No encuentras lo que buscas? Escríbenos por
+                    <a href="https://wa.me/525655333139?text=Hola%2C%20busco%20un%20producto%20de%20papeler%C3%ADa%20que%20no%20veo%20en%20el%20cat%C3%A1logo." target="_blank">WhatsApp</a>
+                    o al correo
+                    <a href="mailto:contacto@emiliocolor.com">contacto@emiliocolor.com</a>
+                    y te lo conseguimos.
+                </p>
+            </div>
+
         </div>
     </main>
 
@@ -962,272 +1098,18 @@
     (function () {
         'use strict';
 
-        /* =========================================================
-           CONFIGURACIÓN
-           ========================================================= */
-        var WHATSAPP_NUMBER = '525655333139';
-        var PRODUCTO_NOMBRE = 'Libreta A6 de 70 hojas + Curso Digital';
-
-        /* =========================================================
-           BANCO DE IMÁGENES
-           ---------------------------------------------------------
-           • IMAGENES_HOJA  → 1 imagen por tipo de hoja
-           • IMAGENES_CURSO → 1 imagen por categoría
-           El orden en la galería será:
-              [ Imagen del curso (si aplica) , Imagen de hoja (raya/punto) ]
-           ========================================================= */
-        var IMAGENES_HOJA = {
-            Raya: [
-                { src: 'img_inkspire/1raya_a6.jpg', alt: 'Libreta A6 de 70 hojas con hoja rayada' }
-            ],
-            Punto: [
-                { src: 'img_inkspire/1punto_a6.jpg', alt: 'Libreta A6 de 70 hojas con hoja punteada' }
-            ]
-        };
-
-        var IMAGENES_CURSO = {
-            basica:       null, // sin curso → sólo se muestran las de la hoja
-            robotica:     { src: 'img_inkspire/a6_robotica.jpg',     alt: 'Libreta A6 con curso digital de Robótica' },
-            electronica:  { src: 'img_inkspire/a6_electronica.jpg',  alt: 'Libreta A6 con curso digital de Electrónica' },
-            complementos: { src: 'img_inkspire/a6_complementos.jpg', alt: 'Libreta A6 con curso digital de Complementos' },
-            manufactura:  { src: 'img_inkspire/a6_manufactura.jpg',  alt: 'Libreta A6 con curso digital de Manufactura' },
-            generales:    { src: 'img_inkspire/a6_generales.jpg',    alt: 'Libreta A6 con curso digital general' },
-            programacion: { src: 'img_inkspire/a6_programacion.jpeg',alt: 'Libreta A6 con curso digital de Programación' }
-        };
-
-        /* =========================================================
-           CATÁLOGO (extraído del PDF "Precios de Venta INKSPIRE")
-           ========================================================= */
-        var CATALOGO = [
-            {
-                id: 'basica',
-                nombre: 'Básica',
-                icono: 'fa-book-open',
-                cursos: [
-                    { nombre: 'Libreta raya o punto sin curso, o pegatina de portada', precio: 25 }
-                ]
-            },
-            {
-                id: 'robotica',
-                nombre: 'Robótica',
-                icono: 'fa-robot',
-                cursos: [
-                    { nombre: 'Curso Básico de Arduino: Aprende Electrónica y Programación', precio: 35 },
-                    { nombre: 'Curso Básico de Arduino y Microcontrolador PIC', precio: 35 },
-                    { nombre: 'Curso Básico de Robótica con MATLAB y Arduino: Modelado y Simulación', precio: 35 }
-                ]
-            },
-            {
-                id: 'electronica',
-                nombre: 'Electrónica',
-                icono: 'fa-microchip',
-                cursos: [
-                    { nombre: 'Curso Básico de Electrónica Analógica y Digital', precio: 35 },
-                    { nombre: 'Biblioteca de materiales: Electrónica, Robótica y Domótica', precio: 35 }
-                ]
-            },
-            {
-                id: 'complementos',
-                nombre: 'Complementos',
-                icono: 'fa-puzzle-piece',
-                cursos: [
-                    { nombre: 'Curso Básico de Minitab para control de calidad', precio: 30 },
-                    { nombre: 'Curso Básico de Control de motores con variadores de frecuencia', precio: 30 },
-                    { nombre: 'Biblioteca de materiales en: fundamentos de mecánica industrial', precio: 30 },
-                    { nombre: 'Curso de Programación Básica de PLCs Industriales', precio: 30 },
-                    { nombre: 'Biblioteca de ingeniería: Recursos y materiales', precio: 30 },
-                    { nombre: 'Curso de Programación Básica de Torno y Fresadora CNC', precio: 30 },
-                    { nombre: 'Curso completo de SolidWorks', precio: 40 },
-                    { nombre: 'Curso completo de AUTOCAD', precio: 40 },
-                    { nombre: 'Curso completo de AUTOCAD Electrical', precio: 40 }
-                ]
-            },
-            {
-                id: 'manufactura',
-                nombre: 'Manufactura',
-                icono: 'fa-industry',
-                cursos: [
-                    { nombre: 'Curso Básico de Programación CNC avanzada', precio: 30 },
-                    { nombre: 'Curso Básico de Core Tools para gestión de calidad', precio: 30 },
-                    { nombre: 'Curso Básico de Técnicas de balanceo de líneas de producción', precio: 30 },
-                    { nombre: 'Curso de Introducción a MRP (Planificación de Requisitos de Materiales)', precio: 30 },
-                    { nombre: 'Curso Básico de Lean Manufacturing', precio: 30 },
-                    { nombre: 'Curso Básico de Industria 4.0', precio: 30 }
-                ]
-            },
-            {
-                id: 'generales',
-                nombre: 'Generales',
-                icono: 'fa-graduation-cap',
-                cursos: [
-                    { nombre: '47 lecciones de inglés', precio: 50 },
-                    { nombre: 'Curso completo de Excel', precio: 50 },
-                    { nombre: 'Curso básico de Office', precio: 50 }
-                ]
-            },
-            {
-                id: 'programacion',
-                nombre: 'Programación',
-                icono: 'fa-code',
-                cursos: [
-                    { nombre: 'Curso de Hacking Ético y Programación', precio: 35 },
-                    { nombre: 'Curso de Inteligencia Artificial: ChatGPT, DALL·E y Hugging Face', precio: 35 },
-                    { nombre: 'Curso de Programación en Java', precio: 35 },
-                    { nombre: 'Curso Completo de 5 Lenguajes de Programación: C, C++, C#, Python y JavaScript', precio: 35 },
-                    { nombre: 'Curso Fundamentos de Windows 10', precio: 35 },
-                    { nombre: 'Curso de Diseño responsivo con cajas flexibles (CSS3)', precio: 35 },
-                    { nombre: 'Curso de Desarrollo Web', precio: 35 },
-                    { nombre: 'Curso de Diseño Web con Bootstrap', precio: 35 },
-                    { nombre: 'Curso de Marketing Digital', precio: 35 },
-                    { nombre: 'Curso de PrimeFaces y Spring Boot: Crea tu primera app web con Java', precio: 35 },
-                    { nombre: 'Curso Crea aplicaciones iOS y Android con Angular', precio: 35 },
-                    { nombre: 'Curso Comienza a programar en Python desde cero', precio: 35 },
-                    { nombre: 'Curso Java SE: Taller de programación de cero a trainee', precio: 35 },
-                    { nombre: 'Biblioteca de materiales: Colección de libros esenciales de programación', precio: 35 },
-                    { nombre: 'Curso Básico de Proceso CRUD C# con: Oracle Database, PostgreSQL y Visual FoxPro', precio: 35 }
-                ]
-            }
-        ];
-
-        /* =========================================================
-           ESTADO INICIAL
-           ========================================================= */
-        var DEFAULTS = {
-            hoja: 'Raya',
-            categoria: 'basica',
-            cursoIndex: 0,
-            cantidad: 1
-        };
-
-        var state = {
-            hoja: DEFAULTS.hoja,
-            categoria: DEFAULTS.categoria,
-            cursoIndex: DEFAULTS.cursoIndex,
-            cantidad: DEFAULTS.cantidad,
-            forceCourseImage: false
-        };
-
-        /* =========================================================
-           UTILIDADES
-           ========================================================= */
-        function money(n) {
-            return '$' + n.toFixed(2);
-        }
-
-        function getCategoria() {
-            for (var i = 0; i < CATALOGO.length; i++) {
-                if (CATALOGO[i].id === state.categoria) return CATALOGO[i];
-            }
-            return CATALOGO[0];
-        }
-
-        function getCurso() {
-            var cat = getCategoria();
-            var idx = state.cursoIndex;
-            if (idx < 0 || idx >= cat.cursos.length) idx = 0;
-            return cat.cursos[idx];
-        }
-
-        function esSinCurso() {
-            return getCategoria().id === 'basica';
-        }
-
-        /* =========================================================
-           LECTURA DE LA URL
-           ========================================================= */
-        function leerURL() {
-            if (!window.URLSearchParams) return;
-
-            var params = new URLSearchParams(window.location.search);
-
-            var hoja = (params.get('hoja') || '').toLowerCase();
-            if (hoja === 'raya') state.hoja = 'Raya';
-            else if (hoja === 'punto') state.hoja = 'Punto';
-
-            var cat = params.get('cat');
-            if (cat) {
-                for (var i = 0; i < CATALOGO.length; i++) {
-                    if (CATALOGO[i].id === cat) {
-                        state.categoria = cat;
-                        break;
-                    }
+        function ejecutar(nombre, fn) {
+            try {
+                fn();
+            } catch (e) {
+                if (window.console && console.warn) {
+                    console.warn('[EmilioColor] Falló el módulo "' + nombre + '":', e);
                 }
             }
-
-            var cursoStr = params.get('curso');
-            if (cursoStr !== null) {
-                var idx = parseInt(cursoStr, 10);
-                var catObj = getCategoria();
-                if (!isNaN(idx) && idx >= 0 && idx < catObj.cursos.length) {
-                    state.cursoIndex = idx;
-                }
-            }
-
-            var qtyStr = params.get('qty');
-            if (qtyStr !== null) {
-                var q = parseInt(qtyStr, 10);
-                if (!isNaN(q) && q >= 1 && q <= 99) {
-                    state.cantidad = q;
-                }
-            }
-
-            /* Si venimos de la URL con un curso ya elegido, mostramos
-               directamente su imagen como principal. */
-            if (!esSinCurso()) {
-                state.forceCourseImage = true;
-            }
         }
 
-        /* =========================================================
-           ESCRITURA DE LA URL
-           ========================================================= */
-        function actualizarURL() {
-            if (!window.history || !window.history.replaceState || !window.URLSearchParams) return;
-
-            var params = new URLSearchParams();
-
-            if (state.hoja !== DEFAULTS.hoja) {
-                params.set('hoja', state.hoja.toLowerCase());
-            }
-            if (state.categoria !== DEFAULTS.categoria) {
-                params.set('cat', state.categoria);
-            }
-            if (state.cursoIndex !== DEFAULTS.cursoIndex) {
-                params.set('curso', state.cursoIndex);
-            }
-            if (state.cantidad !== DEFAULTS.cantidad) {
-                params.set('qty', state.cantidad);
-            }
-
-            var query = params.toString();
-            var nuevaURL = window.location.pathname + (query ? '?' + query : '');
-
-            if (window.location.pathname + window.location.search !== nuevaURL) {
-                window.history.replaceState(null, '', nuevaURL);
-            }
-        }
-
-        /* =========================================================
-           SINCRONIZAR UI CON EL ESTADO
-           ========================================================= */
-        function sincronizarUI() {
-            var pills = document.querySelectorAll('#hojaPills .pill');
-            pills.forEach(function (p) {
-                p.classList.toggle('active', p.getAttribute('data-hoja') === state.hoja);
-            });
-
-            var input = document.getElementById('qtyInput');
-            var minus = document.getElementById('qtyMinus');
-            var plus = document.getElementById('qtyPlus');
-            if (input) input.value = state.cantidad;
-            if (minus) minus.disabled = (state.cantidad <= 1);
-            if (plus) plus.disabled = (state.cantidad >= 99);
-        }
-
-        /* =========================================================
-           1. MENÚ HAMBURGUESA
-           ========================================================= */
-        (function menu() {
+        /* ---------- 1. Menú hamburguesa ---------- */
+        ejecutar('menu', function () {
             var hamburger = document.getElementById('hamburger');
             var nav = document.getElementById('mainNav');
             if (!hamburger || !nav) return;
@@ -1236,328 +1118,58 @@
                 nav.classList.toggle('open');
             });
 
-            hamburger.addEventListener('keydown', function (e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    nav.classList.toggle('open');
-                }
-            });
-
             nav.querySelectorAll('a').forEach(function (link) {
                 link.addEventListener('click', function () {
                     nav.classList.remove('open');
                 });
             });
-        })();
+        });
 
-        /* =========================================================
-           2. AÑO DINÁMICO
-           ========================================================= */
-        (function anio() {
+        /* ---------- 2. Año dinámico ---------- */
+        ejecutar('anio', function () {
             var el = document.getElementById('current-year');
             if (el) el.textContent = new Date().getFullYear();
-        })();
+        });
 
-        var _lastGaleriaSig = '';
+        /* ---------- 3. Filtros: Todos / Individual / Volumen ---------- */
+        ejecutar('chips', function () {
+            var chips = document.querySelectorAll('.chip');
+            var cards = document.querySelectorAll('.product-card');
+            var countEl = document.querySelector('.catalog-bar .count strong');
 
-        function getImagenesActuales() {
-            var lista = [];
+            chips.forEach(function (chip) {
+                chip.addEventListener('click', function () {
+                    chips.forEach(function (c) { c.classList.remove('active'); });
+                    chip.classList.add('active');
 
-            /* 1) PRIMERO la imagen del curso (si aplica) */
-            if (!esSinCurso()) {
-                var imgCurso = IMAGENES_CURSO[getCategoria().id];
-                if (imgCurso) lista.push(imgCurso);
-            }
+                    var filter = chip.getAttribute('data-filter');
+                    var visible = 0;
 
-            /* 2) DESPUÉS la imagen de la hoja (raya o punto) */
-            var baseArr = IMAGENES_HOJA[state.hoja] || IMAGENES_HOJA.Raya;
-            baseArr.forEach(function (img) { lista.push(img); });
+                    cards.forEach(function (card) {
+                        var tipo = card.getAttribute('data-tipo');
+                        var show = false;
 
-            return lista;
-        }
+                        if (filter === 'todos') {
+                            show = true;
+                        } else if (filter === 'individual') {
+                            show = (tipo === 'individual');
+                        } else if (filter === 'volumen') {
+                            show = (tipo === 'volumen');
+                        }
 
-        function renderGaleria() {
-            var thumbsCont = document.getElementById('thumbs');
-            var mainImage  = document.getElementById('mainImage');
-            if (!thumbsCont || !mainImage) return;
-
-            var imgs = getImagenesActuales();
-            var sig  = imgs.map(function (i) { return i.src; }).join('|');
-
-            var mustForce = state.forceCourseImage && !esSinCurso();
-
-            if (sig === _lastGaleriaSig && !mustForce) return;
-            _lastGaleriaSig = sig;
-
-            var currentSrc = mainImage.getAttribute('data-current-src') || (imgs[0] && imgs[0].src);
-
-            if (mustForce && imgs.length > 0) {
-                currentSrc = imgs[0].src;
-                state.forceCourseImage = false;
-            } else {
-                var found = false;
-                for (var i = 0; i < imgs.length; i++) {
-                    if (imgs[i].src === currentSrc) { found = true; break; }
-                }
-                if (!found) currentSrc = imgs[0].src;
-            }
-
-            /* Pintamos los thumbnails */
-            var html = '';
-            imgs.forEach(function (img) {
-                var active = (img.src === currentSrc) ? ' active' : '';
-                html +=
-                    '<button type="button" class="thumb' + active + '"' +
-                        ' data-src="' + img.src + '" data-alt="' + img.alt + '">' +
-                        '<img src="' + img.src + '" alt="' + img.alt + '" loading="lazy" />' +
-                    '</button>';
-            });
-            thumbsCont.innerHTML = html;
-
-            /* Establecemos la imagen principal */
-            for (var j = 0; j < imgs.length; j++) {
-                if (imgs[j].src === currentSrc) {
-                    mainImage.src = imgs[j].src;
-                    mainImage.alt = imgs[j].alt;
-                    mainImage.setAttribute('data-current-src', imgs[j].src);
-                    break;
-                }
-            }
-
-            /* Eventos de cada thumbnail */
-            thumbsCont.querySelectorAll('.thumb').forEach(function (thumb) {
-                thumb.addEventListener('click', function () {
-                    thumbsCont.querySelectorAll('.thumb').forEach(function (t) {
-                        t.classList.remove('active');
+                        card.style.display = show ? '' : 'none';
+                        if (show) visible++;
                     });
-                    thumb.classList.add('active');
 
-                    mainImage.style.opacity = '0';
-                    var nuevaSrc = thumb.getAttribute('data-src');
-                    var nuevoAlt = thumb.getAttribute('data-alt') || '';
-
-                    setTimeout(function () {
-                        mainImage.src = nuevaSrc;
-                        mainImage.alt = nuevoAlt;
-                        mainImage.setAttribute('data-current-src', nuevaSrc);
-                        mainImage.style.opacity = '1';
-                    }, 160);
-                });
-            });
-        }
-
-        /* =========================================================
-           4. TIPO DE HOJA
-           ========================================================= */
-        (function tipoHoja() {
-            var pills = document.querySelectorAll('#hojaPills .pill');
-
-            pills.forEach(function (pill) {
-                pill.addEventListener('click', function () {
-                    pills.forEach(function (p) { p.classList.remove('active'); });
-                    pill.classList.add('active');
-                    state.hoja = pill.getAttribute('data-hoja');
-                    update();
-                });
-            });
-        })();
-
-        /* =========================================================
-           5. CATEGORÍAS
-           ========================================================= */
-        function renderCategorias() {
-            var cont = document.getElementById('catList');
-            if (!cont) return;
-
-            var html = '';
-            CATALOGO.forEach(function (cat) {
-                var activa = (cat.id === state.categoria) ? ' active' : '';
-                html += '<button type="button" class="chip' + activa + '" data-cat="' + cat.id + '">' +
-                            '<i class="fas ' + cat.icono + '"></i> ' + cat.nombre +
-                        '</button>';
-            });
-            cont.innerHTML = html;
-
-            cont.querySelectorAll('.chip').forEach(function (btn) {
-                btn.addEventListener('click', function () {
-                    var nuevaCat = btn.getAttribute('data-cat');
-                    if (nuevaCat === state.categoria) return;
-
-                    state.categoria = nuevaCat;
-                    state.cursoIndex = 0;
-                    state.forceCourseImage = (nuevaCat !== 'basica');
-
-                    renderCategorias();
-                    renderCursos();
-                    update();
-                });
-            });
-        }
-
-        /* =========================================================
-           6. CURSOS
-           ========================================================= */
-        function renderCursos() {
-            var cont = document.getElementById('cursoList');
-            if (!cont) return;
-
-            var cat = getCategoria();
-            var html = '';
-
-            cat.cursos.forEach(function (curso, i) {
-                var sel = (i === state.cursoIndex) ? ' selected' : '';
-                html +=
-                    '<label class="curso-item' + sel + '" data-index="' + i + '">' +
-                        '<input type="radio" name="curso" value="' + i + '"' +
-                            (i === state.cursoIndex ? ' checked' : '') + ' />' +
-                        '<span class="curso-check"><i class="fas fa-check"></i></span>' +
-                        '<span class="curso-text">' +
-                            '<span class="curso-name">' + curso.nombre + '</span>' +
-                            '<span class="curso-price">' + money(curso.precio) + ' MXN</span>' +
-                        '</span>' +
-                    '</label>';
-            });
-
-            cont.innerHTML = html;
-
-            cont.querySelectorAll('.curso-item').forEach(function (item) {
-                item.addEventListener('click', function () {
-                    var idx = parseInt(item.getAttribute('data-index'), 10);
-                    state.cursoIndex = idx;
-
-                    cont.querySelectorAll('.curso-item').forEach(function (it) {
-                        it.classList.remove('selected');
-                    });
-                    item.classList.add('selected');
-
-                    var radio = item.querySelector('input');
-                    if (radio) radio.checked = true;
-
-                    if (!esSinCurso()) {
-                        state.forceCourseImage = true;
+                    if (countEl) {
+                        countEl.textContent = visible + (visible === 1 ? ' producto' : ' productos');
                     }
-
-                    update();
                 });
             });
-        }
-
-        /* =========================================================
-           7. CANTIDAD
-           ========================================================= */
-        (function cantidad() {
-            var input = document.getElementById('qtyInput');
-            var minus = document.getElementById('qtyMinus');
-            var plus  = document.getElementById('qtyPlus');
-            if (!input || !minus || !plus) return;
-
-            function setQty(val) {
-                val = parseInt(val, 10);
-                if (isNaN(val) || val < 1) val = 1;
-                if (val > 99) val = 99;
-                state.cantidad = val;
-                input.value = val;
-                minus.disabled = (val <= 1);
-                plus.disabled  = (val >= 99);
-                update();
-            }
-
-            minus.addEventListener('click', function () { setQty(state.cantidad - 1); });
-            plus.addEventListener('click',  function () { setQty(state.cantidad + 1); });
-
-            input.addEventListener('input', function () { setQty(input.value); });
-            input.addEventListener('blur',  function () { setQty(input.value); });
-        })();
-
-        /* =========================================================
-           8. ACTUALIZAR TODO
-           ========================================================= */
-        function update() {
-            var curso = getCurso();
-            var sinCurso = esSinCurso();
-            var unitario = curso.precio;
-            var total = unitario * state.cantidad;
-
-            /* Precio grande */
-            var priceValue = document.getElementById('priceValue');
-            var priceNote  = document.getElementById('priceNote');
-            if (priceValue) priceValue.textContent = money(unitario);
-            if (priceNote) {
-                priceNote.textContent = sinCurso
-                    ? 'Libreta sin curso · precio por pieza'
-                    : 'Precio por pieza · curso digital incluido';
-            }
-
-            var chosen = document.getElementById('cursoChosen');
-            if (chosen) {
-                chosen.textContent = sinCurso ? 'Sin curso' : getCategoria().nombre;
-            }
-
-            var tag = document.getElementById('galleryTag');
-            if (tag) {
-                tag.style.opacity = sinCurso ? '0' : '1';
-                tag.style.pointerEvents = sinCurso ? 'none' : '';
-            }
-
-            /* Resumen */
-            var sumHoja     = document.getElementById('sumHoja');
-            var sumCurso    = document.getElementById('sumCurso');
-            var sumCantidad = document.getElementById('sumCantidad');
-            var sumTotal    = document.getElementById('sumTotal');
-            var qtyTotal    = document.getElementById('qtyTotal');
-
-            if (sumHoja)     sumHoja.textContent = state.hoja;
-            if (sumCurso)    sumCurso.textContent = sinCurso ? 'Sin curso digital' : curso.nombre;
-            if (sumCantidad) sumCantidad.textContent = state.cantidad;
-            if (sumTotal)    sumTotal.textContent = money(total) + ' MXN';
-            if (qtyTotal)    qtyTotal.textContent = money(total) + ' MXN';
-
-            /* Enlace de WhatsApp */
-            var wa = document.getElementById('waButton');
-            if (wa) wa.href = construirWhatsApp(curso, sinCurso, unitario, total);
-
-            renderGaleria();
-
-            actualizarURL();
-        }
-
-        /* =========================================================
-           9. MENSAJE DE WHATSAPP (sin emojis)
-           ========================================================= */
-        function construirWhatsApp(curso, sinCurso, unitario, total) {
-            var lineas = [];
-            lineas.push('Hola EmilioColor!');
-            lineas.push('Quiero pedir el siguiente producto:');
-            lineas.push('');
-            lineas.push('*' + PRODUCTO_NOMBRE + '*');
-            lineas.push('- Tipo de hoja: ' + state.hoja);
-            lineas.push('- Curso: ' + (sinCurso ? 'Sin curso digital' : curso.nombre));
-            if (!sinCurso) {
-                lineas.push('- Categoría: ' + getCategoria().nombre);
-            }
-            lineas.push('- Cantidad: ' + state.cantidad + (state.cantidad === 1 ? ' pieza' : ' piezas'));
-            lineas.push('- Precio unitario: ' + money(unitario) + ' MXN');
-            lineas.push('- *Total: ' + money(total) + ' MXN*');
-            lineas.push('');
-            lineas.push('Me confirman disponibilidad y forma de pago? Gracias.');
-
-            return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(lineas.join('\n'));
-        }
-
-        try {
-            leerURL();
-            renderCategorias();
-            renderCursos();
-            sincronizarUI();
-            update();
-        } catch (e) {
-            if (window.console && console.warn) {
-                console.warn('[EmilioColor] Error al inicializar el producto:', e);
-            }
-        }
+        });
 
         if (window.console && console.log) {
-            console.log('EmilioColor · Producto: Libreta A6 + Curso Digital (InkSpire)');
+            console.log('EmilioColor · Catálogo Papelería y Oficina (InkSpire)');
         }
     })();
     </script>
