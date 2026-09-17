@@ -87,8 +87,8 @@
             --bg-white: #FFFFFF;
             --text-dark: #1E293B;
             --text-muted: #475569;
-            --blue-primary: #1D4ED8;
-            --blue-light: #3B82F6;
+            --blue-primary: #0e42ee;
+            --blue-light: #0e42ee;
             --blue-soft: #DBEAFE;
             --border-light: #E2E8F0;
             --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -175,7 +175,7 @@
         nav {
             display: flex;
             align-items: center;
-            gap: 32px;
+            gap: 42px; /* mayor separación entre enlaces */
         }
 
         nav a {
@@ -184,6 +184,7 @@
             color: var(--text-muted);
             transition: 0.3s;
             position: relative;
+            white-space: nowrap;
         }
 
         nav a:hover {
@@ -198,6 +199,7 @@
             font-weight: 600;
             font-size: 0.8rem;
             transition: 0.3s;
+            margin-left: 12px; /* más aire respecto al último enlace */
         }
 
         .btn-outline-header:hover {
@@ -520,64 +522,6 @@
         }
 
         /* ============================================
-           NOTICIAS
-           ============================================ */
-        .noticias {
-            padding: 80px 0;
-            background: var(--bg-white);
-            border-bottom: 1px solid var(--border-light);
-        }
-        .noticias-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        .noticia-card {
-            background: var(--bg-primary);
-            border-radius: 16px;
-            padding: 24px;
-            border: 1px solid var(--border-light);
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-        .noticia-card:hover {
-            box-shadow: var(--shadow-md);
-            transform: translateY(-4px);
-        }
-        .noticia-card .fecha {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 8px;
-        }
-        .noticia-card h4 {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-        }
-        .noticia-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            flex: 1;
-        }
-        .noticia-card .btn-ver {
-            align-self: flex-start;
-            margin-top: 16px;
-            background: transparent;
-            border: 1px solid var(--blue-primary);
-            color: var(--blue-primary);
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .noticia-card .btn-ver:hover {
-            background: var(--blue-primary);
-            color: #fff;
-        }
-
-        /* ============================================
            INVERSIONISTAS
            ============================================ */
         .inversionistas {
@@ -626,144 +570,372 @@
         }
 
         /* ============================================
-           ECOSISTEMA DE MARCAS
+           MARCAS + VALOR PERCIBIDO (sección unificada)
            ============================================ */
-        .ecosystem {
+        .brands-value {
             padding: 80px 0;
-            background: var(--bg-white);
+            background: var(--bg-primary);
             border-bottom: 1px solid var(--border-light);
         }
 
-        .brand-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .brand-item {
-            background: var(--bg-primary);
-            padding: 30px 20px;
-            text-align: center;
-            border-radius: 16px;
+        /* Franja del grupo matriz */
+        .group-strip {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            flex-wrap: wrap;
+            padding: 22px 30px;
+            background: linear-gradient(135deg, #EFF6FF 0%, #FFFFFF 100%);
             border: 1px solid var(--border-light);
-            transition: 0.3s;
-        }
-
-        .brand-item:hover {
-            border-color: var(--blue-light);
+            border-radius: 20px;
             box-shadow: var(--shadow-sm);
+            margin-bottom: 36px;
         }
 
-        .brand-item img {
-            max-width: 100px;
-            height: auto;
-            margin-bottom: 16px;
+        .group-strip img {
+            height: 40px;
+            width: auto;
+            display: block;
         }
 
-        .brand-item h4 {
+        .group-strip-text {
+            flex: 1 1 240px;
+        }
+
+        .group-strip-text h3 {
             font-size: 1.2rem;
-            margin-bottom: 4px;
+            font-weight: 700;
             color: var(--text-dark);
         }
 
-        .brand-item p {
+        .group-strip-text p {
+            font-size: 0.9rem;
             color: var(--text-muted);
-            font-size: 0.85rem;
         }
 
-        /* ============================================
-           VALOR PERCIBIDO
-           ============================================ */
-        .testimonials {
-            padding: 80px 0;
-            background: var(--bg-primary);
-            border-bottom: 1px solid var(--border-light);
+        .group-strip-years {
+            font-size: 0.76rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            color: var(--blue-primary);
+            background: var(--blue-soft);
+            padding: 8px 18px;
+            border-radius: 30px;
+            white-space: nowrap;
         }
 
-        .testimonial-grid {
+        .brand-value-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 20px;
+            gap: 28px;
+            align-items: stretch;
         }
 
-        .testimonial-card {
+        .bv-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
             background: var(--bg-white);
-            padding: 30px 24px;
-            border-radius: 16px;
             border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 32px 26px 28px;
             box-shadow: var(--shadow-sm);
+            overflow: hidden;
             transition: 0.3s;
         }
 
-        .testimonial-card:hover {
-            box-shadow: var(--shadow-md);
+        .bv-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--blue-primary), #60A5FA);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.35s ease;
         }
 
-        .testimonial-card .porcentaje {
+        .bv-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--blue-light);
+        }
+
+        .bv-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .bv-logo {
+            height: 70px;
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
+            justify-content: center;
+            margin-bottom: 16px;
         }
 
-        .testimonial-card .porcentaje .barra {
-            flex: 1;
+        .bv-logo img {
+            max-height: 62px;
+            max-width: 130px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .bv-name {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .bv-desc {
+            text-align: center;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .bv-years {
+            display: block;
+            width: fit-content;
+            margin: 12px auto 0;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            color: var(--blue-primary);
+            background: var(--blue-soft);
+            padding: 5px 14px;
+            border-radius: 30px;
+            text-align: center;
+        }
+
+        .bv-divider {
+            height: 1px;
+            background: var(--border-light);
+            margin: 22px 0;
+        }
+
+        .bv-sat-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .bv-sat-row span {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .bv-sat-row strong {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--blue-primary);
+            line-height: 1;
+        }
+
+        .bv-bar {
             height: 8px;
             background: var(--border-light);
             border-radius: 4px;
             overflow: hidden;
         }
 
-        .testimonial-card .porcentaje .barra .relleno {
+        .bv-fill {
             height: 100%;
-            background: var(--blue-primary);
             border-radius: 4px;
+            background: linear-gradient(90deg, var(--blue-primary), #60A5FA);
         }
 
-        .testimonial-card .porcentaje .porcentaje-num {
-            font-weight: 700;
-            color: var(--blue-primary);
-            font-size: 1.1rem;
-            min-width: 44px;
-            text-align: right;
+        .bv-clients {
+            margin-top: auto;
+            padding-top: 24px;
         }
 
-        .testimonial-card p {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: var(--text-dark);
-            margin-bottom: 16px;
+        .bv-clients h5 {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 10px;
+            font-weight: 600;
         }
 
-        .testimonial-author {
+        .bv-clients ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .bv-clients ul li {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+            padding: 5px 0;
+            color: var(--text-dark);
+            font-size: 0.92rem;
         }
 
-        .testimonial-author .avatar {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
+        .bv-clients ul li i {
+            color: var(--blue-primary);
+            font-size: 0.6rem;
+            flex-shrink: 0;
+        }
+
+        /* ============================================
+           PREGUNTAS FRECUENTES (FAQ)
+           ============================================ */
+        .faq-block {
+            margin-top: 70px;
+            padding-top: 60px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .faq-block .section-header {
+            margin-bottom: 36px;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        .faq-brand {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 26px 24px 8px;
+            box-shadow: var(--shadow-sm);
+            transition: 0.3s;
+        }
+
+        .faq-brand:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .faq-brand-head {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .faq-brand-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
             background: var(--blue-soft);
             color: var(--blue-primary);
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1.15rem;
+            flex-shrink: 0;
+        }
+
+        .faq-brand-head h3 {
+            font-size: 1.15rem;
             font-weight: 700;
-            font-size: 1rem;
+            margin: 0;
+            color: var(--text-dark);
         }
 
-        .testimonial-author .info .name {
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .testimonial-author .info .role {
-            color: var(--text-muted);
+        .faq-brand-head span {
+            display: block;
             font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 16px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            text-align: left;
+            font-family: var(--font);
+            font-size: 0.97rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .faq-question:hover {
+            color: var(--blue-primary);
+        }
+
+        .faq-question i {
+            color: var(--blue-primary);
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question {
+            color: var(--blue-primary);
+        }
+
+        .faq-item.open .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .faq-answer p {
+            margin: 0 0 16px;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        .faq-answer a {
+            color: var(--blue-primary);
+            font-weight: 600;
+        }
+
+        .faq-trust {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            padding: 18px 24px;
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 14px;
+            box-shadow: var(--shadow-sm);
+        }
+
+
+        .faq-trust p {
+            margin: 0;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        /* Botón "Generar reporte": reutiliza el estilo de btn-primary,
+           solo se ajusta el margen superior para separarlo del texto */
+        .faq-trust .btn-primary {
+            margin-top: 14px;
         }
 
         /* ============================================
@@ -1290,6 +1462,9 @@
            RESPONSIVE
            ============================================ */
         @media (max-width: 1024px) {
+            nav {
+                gap: 26px; /* en tablet se reduce la separación */
+            }
             .hero-grid,
             .about-grid,
             .contact-grid,
@@ -1320,20 +1495,16 @@
                 max-width: 300px;
                 height: 160px;
             }
-            .testimonial-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .brand-grid {
-                grid-template-columns: 1fr 1fr;
+            .brand-value-grid {
+                grid-template-columns: 1fr;
+                max-width: 540px;
+                margin: 0 auto;
             }
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
             .info-grid {
                 grid-template-columns: 1fr;
-            }
-            .noticias-grid {
-                grid-template-columns: 1fr 1fr;
             }
             .mission-vision {
                 grid-template-columns: 1fr;
@@ -1368,6 +1539,9 @@
             .hamburger {
                 display: block;
             }
+            .btn-outline-header {
+                margin-left: 0;
+            }
             .hero-text h1 {
                 font-size: 2.4rem;
             }
@@ -1391,11 +1565,17 @@
                 width: 100%;
                 height: 100%;
             }
-            .testimonial-grid {
-                grid-template-columns: 1fr;
+            .brand-value-grid {
+                max-width: 100%;
             }
-            .brand-grid {
-                grid-template-columns: 1fr 1fr;
+            .group-strip {
+                flex-direction: column;
+                text-align: center;
+                padding: 24px 20px;
+                gap: 14px;
+            }
+            .group-strip-text {
+                flex: 1 1 auto;
             }
             .footer-grid {
                 grid-template-columns: 1fr;
@@ -1408,9 +1588,6 @@
             .about-values {
                 grid-template-columns: 1fr 1fr;
                 gap: 16px;
-            }
-            .noticias-grid {
-                grid-template-columns: 1fr;
             }
             .inv-stats {
                 grid-template-columns: 1fr;
@@ -1432,6 +1609,14 @@
             }
             .escala-lista {
                 grid-template-columns: 1fr;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq-trust {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
             }
             .cookie-banner {
                 flex-direction: column;
@@ -1458,14 +1643,14 @@
                 width: 100%;
                 justify-content: center;
             }
-            .brand-grid {
-                grid-template-columns: 1fr;
-            }
             .about-values {
                 grid-template-columns: 1fr;
             }
             .info-card {
                 padding: 24px 16px;
+            }
+            .bv-card {
+                padding: 26px 20px 24px;
             }
             .hero-service-item .img-placeholder {
                 max-width: 180px;
@@ -1504,10 +1689,8 @@
             </div>
             <nav id="mainNav">
                 <a href="#about">Nosotros</a>
-                <a href="#noticias">Noticias</a>
-                <a href="#inversionistas">Inversionistas</a>
                 <a href="#ecosystem">Marcas</a>
-                <a href="#valor">Valor</a>
+                <a href="#faq">Preguntas frecuentes</a>
                 <a href="#info-adicional">Info. Adicional</a>
                 <a href="#contact">Contacto</a>
                 <a href="#" class="btn-outline-header"><i class="fas fa-user"></i> Área Cliente</a>
@@ -1533,11 +1716,11 @@
                     y suministro de papelería de calidad. Un solo grupo, múltiples soluciones.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn-primary">
-                        <i class="fas fa-calendar-check"></i> Agendar una cita
+                    <a href="#ecosystem" class="btn-primary">
+                        <i class="fas fa-box-open"></i> Ver productos y servicios
                     </a>
-                    <a href="#noticias" class="btn-secondary">
-                        <i class="fas fa-arrow-right"></i> Ver Noticias
+                    <a href="#contact" class="btn-secondary">
+                        <i class="fas fa-calendar-check"></i> Agendar una cita
                     </a>
                 </div>
                 <div class="trust-badge">
@@ -1652,184 +1835,338 @@
     </section>
 
     <!-- ============================================
-    NOTICIAS
+    MARCAS + VALOR PERCIBIDO (sección unificada)
     ============================================ -->
-<section class="noticias" id="noticias">
-    <div class="container">
-        <div class="section-header">
-            <h2>Últimas <span>noticias</span></h2>
-            <p>Conoce las novedades, cambios y proyectos más recientes de nuestro grupo.</p>
-        </div>
-
-        <div class="noticias-grid">
-            <div class="noticia-card">
-                <div class="fecha"><i class="far fa-calendar-alt"></i> 17 de agosto, 2026</div>
-                <h4>Rediseño de la nueva página web de EmilioColor</h4>
-                <p>Presentamos una nueva versión de nuestra plataforma digital, con una imagen renovada, navegación mejorada y una experiencia más clara para nuestros visitantes.</p>
-                <!-- <button class="btn-ver">Ver noticia <i class="fas fa-arrow-right"></i></button> -->
-            </div>
-
-            <div class="noticia-card">
-                <div class="fecha"><i class="far fa-calendar-alt"></i> 5 de agosto, 2026</div>
-                <h4>Reestructuración y nueva organización de EmilioColor</h4>
-                <p>EmilioColor inicia una nueva etapa con una estructura organizacional renovada, nuevos procesos y una distribución más eficiente de sus áreas y proyectos.</p>
-                <!-- <button class="btn-ver">Ver noticia <i class="fas fa-arrow-right"></i></button> -->
-            </div>
-
-            <div class="noticia-card">
-                <div class="fecha"><i class="far fa-calendar-alt"></i> 28 de julio, 2026</div>
-                <h4>Rediseño de identidad y reorganización de InkSpire™</h4>
-                <p>InkSpire™ presenta una nueva identidad visual y una reorganización interna orientada a fortalecer su crecimiento y consolidar su propuesta de papelería y suministros.</p>
-                <!-- <button class="btn-ver">Ver noticia <i class="fas fa-arrow-right"></i></button> -->
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- ============================================
-    INVERSIONISTAS
-    ============================================ -->
-    <section class="inversionistas" id="inversionistas">
-        <div class="container inv-grid">
-            <div class="inv-text">
-                <h3>Invierte en <span>crecimiento</span></h3>
-                <p>
-                    EmilioColor es un grupo sólido con más de 45 años de trayectoria. Ofrecemos oportunidades de inversión
-                    en proyectos de expansión, tecnología y sostenibilidad.
-                </p>
-                <p>
-                    Conoce nuestros indicadores financieros y las proyecciones de crecimiento a mediano plazo.
-                </p>
-                <a href="#contact" class="btn-primary" style="padding:12px 32px;"><i class="fas fa-chart-pie"></i> Solicitar información financiera</a>
-            </div>
-            <div class="inv-stats">
-                <div class="inv-stat">
-                    <div class="num">+45</div>
-                    <div class="label">Años de trayectoria</div>
-                </div>
-                <div class="inv-stat">
-                    <div class="num">12%</div>
-                    <div class="label">Crecimiento anual (últimos 3 años)</div>
-                </div>
-                <div class="inv-stat">
-                    <div class="num">3</div>
-                    <div class="label">Divisiones especializadas</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-    ECOSISTEMA DE MARCAS
-    ============================================ -->
-    <section class="ecosystem" id="ecosystem">
+    <section class="brands-value" id="ecosystem">
         <div class="container">
             <div class="section-header">
-                <h2>Nuestras <span>marcas</span> especializadas</h2>
-                <p>Cadena de valor completa para tu empresa.</p>
-            </div>
-<div class="brand-grid">
-    <div class="brand-item">
-        <img src="img_marcas/inkspire_logo.png" alt="InkSpire™ - Papelería y suministros de oficina" width="100" height="auto" loading="lazy" />
-        <h4>InkSpire™</h4>
-        <p>Papelería y suministros de oficina</p>
-        <span class="brand-years">Desde 2023 · 3 años de experiencia</span>
-    </div>
-
-    <div class="brand-item">
-        <img src="img_marcas/am-shev_logo.png" alt="AM-SHEV™ - Compra y venta de camionetas de carga" width="100" height="auto" loading="lazy" />
-        <h4>AM-SHEV™</h4>
-        <p>Compra y venta de camionetas de carga</p>
-        <span class="brand-years">Desde 1982 · 45 años de experiencia</span>
-    </div>
-
-    <div class="brand-item">
-        <img src="img_marcas/classcloud_logo.png" alt="ClassCloud℠ - Desarrollo de software a medida" width="100" height="auto" loading="lazy" />
-        <h4>ClassCloud℠</h4>
-        <p>Desarrollo de software a medida</p>
-        <span class="brand-years">Desde 2024 · 2 años de experiencia</span>
-    </div>
-    <div class="brand-item">
-    <img src="img_marcas/emiliocolor_logo.png" alt="EmilioColor® - Grupo comercial" width="100" height="auto" loading="lazy" />
-    <h4>EmilioColor®</h4>
-    <p>Grupo comercial de 3 empresas</p>
-    <span class="brand-years">Desde 2023 · 3 años de experiencia</span>
-</div>
-</div>
-        </div>
-    </section>
-
-    <!-- ============================================
-    VALOR PERCIBIDO
-    ============================================ -->
-    <section class="testimonials" id="valor">
-        <div class="container">
-            <div class="section-header">
-                <h2><span>Valor</span> percibido de nuestras marcas</h2>
-                <p>La confianza de nuestros clientes respalda cada una de nuestras divisiones.</p>
+                <h2>Nuestras <span>marcas</span> y su valor percibido</h2>
+                <p>Cadena de valor completa para tu empresa, respaldada por la confianza de nuestros clientes.</p>
             </div>
 
-<div class="testimonial-grid">
-    <div class="testimonial-card">
-        <div class="porcentaje">
-            <span>Satisfacción</span>
-            <div class="barra">
-                <div class="relleno" style="width: 98%;"></div>
+            <!-- Grupo matriz -->
+            <div class="group-strip">
+                <img src="img_marcas/emiliocolor_logo.png" alt="EmilioColor® - Grupo comercial" loading="lazy" />
+                <div class="group-strip-text">
+                    <h3>EmilioColor®</h3>
+                    <p>Grupo comercial que integra 3 empresas especializadas.</p>
+                </div>
+                <span class="group-strip-years">Desde 2023 · 3 años de experiencia</span>
             </div>
-            <span class="porcentaje-num">98%</span>
-        </div>
-        <p>
-            “ClassCloud nos proporcionó herramientas innovadoras para fortalecer la enseñanza de la física, acompañadas de soporte técnico, recursos físicos y asesoría especializada para una implementación efectiva.”
-        </p>
-        <div class="testimonial-author">
-            <div class="avatar">AM</div>
-            <div class="info">
-                <div class="name">Alejandra Martínez</div>
-                <div class="role">Docente de Física</div>
-            </div>
-        </div>
-    </div>
 
-    <div class="testimonial-card">
-        <div class="porcentaje">
-            <span>Satisfacción</span>
-            <div class="barra">
-                <div class="relleno" style="width: 94%;"></div>
-            </div>
-            <span class="porcentaje-num">94%</span>
-        </div>
-        <p>
-            “Inkspire nos permitió transformar productos tradicionales de papelería en propuestas más atractivas y funcionales, ayudándonos a desarrollar nuevas experiencias para nuestros clientes.”
-        </p>
-        <div class="testimonial-author">
-            <div class="avatar">LC</div>
-            <div class="info">
-                <div class="name">Laura Cabrera</div>
-                <div class="role">Directora Creativa, Estudio Editorial</div>
-            </div>
-        </div>
-    </div>
+            <div class="brand-value-grid" id="valor">
 
-    <div class="testimonial-card">
-        <div class="porcentaje">
-            <span>Satisfacción</span>
-            <div class="barra">
-                <div class="relleno" style="width: 91%;"></div>
+                <!-- ===== InkSpire ===== -->
+                <article class="bv-card">
+                    <div class="bv-logo">
+                        <img src="img_marcas/inkspire_logo.png" alt="InkSpire™ - Papelería y suministros de oficina" loading="lazy" />
+                    </div>
+                    <h3 class="bv-name">InkSpire™</h3>
+                    <p class="bv-desc">Papelería y suministros de oficina</p>
+                    <span class="bv-years">Desde 2023 · 3 años de experiencia</span>
+
+                    <div class="bv-divider"></div>
+
+                    <div class="bv-sat-row">
+                        <span>Satisfacción</span>
+                        <strong>88%</strong>
+                    </div>
+                    <div class="bv-bar"><div class="bv-fill" style="width: 88%;"></div></div>
+
+                    <div class="bv-clients">
+                        <h5>Tipos de clientes atendidos</h5>
+                        <ul>
+                            <li><i class="fas fa-circle"></i> Negocios de papelería</li>
+                            <li><i class="fas fa-circle"></i> Oficinas corporativas</li>
+                            <li><i class="fas fa-circle"></i> Instituciones educativas</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- ===== AM-SHEV ===== -->
+                <article class="bv-card">
+                    <div class="bv-logo">
+                        <img src="img_marcas/am-shev_logo.png" alt="AM-SHEV™ - Compra y venta de camionetas de carga" loading="lazy" />
+                    </div>
+                    <h3 class="bv-name">AM-SHEV™</h3>
+                    <p class="bv-desc">Compra y venta de camionetas de carga</p>
+                    <span class="bv-years" id="brand-years-amshev">Desde 1981 · 45 años de experiencia</span>
+
+                    <div class="bv-divider"></div>
+
+                    <div class="bv-sat-row">
+                        <span>Satisfacción</span>
+                        <strong>90%</strong>
+                    </div>
+                    <div class="bv-bar"><div class="bv-fill" style="width: 90%;"></div></div>
+
+                    <div class="bv-clients">
+                        <h5>Tipos de clientes atendidos</h5>
+                        <ul>
+                            <li><i class="fas fa-circle"></i> Empresas constructoras</li>
+                            <li><i class="fas fa-circle"></i> Compañías logísticas</li>
+                            <li><i class="fas fa-circle"></i> Negocios de distribución</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- ===== ClassCloud ===== -->
+                <article class="bv-card">
+                    <div class="bv-logo">
+                        <img src="img_marcas/classcloud_logo.png" alt="ClassCloud℠ - Desarrollo de software a medida" loading="lazy" />
+                    </div>
+                    <h3 class="bv-name">ClassCloud℠</h3>
+                    <p class="bv-desc">Desarrollo de software a medida</p>
+                    <span class="bv-years">Desde 2024 · 2 años de experiencia</span>
+
+                    <div class="bv-divider"></div>
+
+                    <div class="bv-sat-row">
+                        <span>Satisfacción</span>
+                        <strong>98%</strong>
+                    </div>
+                    <div class="bv-bar"><div class="bv-fill" style="width: 98%;"></div></div>
+
+                    <div class="bv-clients">
+                        <h5>Tipos de clientes atendidos</h5>
+                        <ul>
+                            <li><i class="fas fa-circle"></i> Docentes</li>
+                            <li><i class="fas fa-circle"></i> Escuelas</li>
+                            <li><i class="fas fa-circle"></i> Instituciones educativas</li>
+                        </ul>
+                    </div>
+                </article>
+
             </div>
-            <span class="porcentaje-num">91%</span>
-        </div>
-        <p>
-            “Las soluciones de transporte de AM-SHEV fueron fundamentales para optimizar nuestra logística y mantener el ritmo de los proyectos, incluso ante exigentes tiempos de entrega.”
-        </p>
-        <div class="testimonial-author">
-            <div class="avatar">RG</div>
-            <div class="info">
-                <div class="name">Ricardo González</div>
-                <div class="role">Coordinador de Logística, Grupo Constructor</div>
+
+            <!-- ============================================
+                 PREGUNTAS FRECUENTES
+                 ============================================ -->
+            <div class="faq-block" id="faq">
+                <div class="section-header">
+                    <h2>Preguntas <span>frecuentes</span></h2>
+                    <p>Seguridad, legalidad y confianza: resolvemos las dudas más comunes sobre cada una de nuestras marcas.</p>
+                </div>
+
+                <div class="faq-grid">
+
+                    <!-- ===== EmilioColor ===== -->
+                    <div class="faq-brand">
+                        <div class="faq-brand-head">
+                            <div class="faq-brand-icon"><i class="fas fa-building"></i></div>
+                            <div>
+                                <h3>EmilioColor®</h3>
+                                <span>Grupo comercial</span>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                ¿EmilioColor es una empresa segura?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Sí. Somos un grupo comercial mexicano con operaciones desde 1981. Todas nuestras operaciones se realizan con facturación, contratos por escrito y comprobantes de pago emitidos a nombre de la empresa o a cuentas personales.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                ¿Cómo verifico que un empleado realmente trabaja en EmilioColor?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Puedes consultar el <a href="#info-adicional">Verificador de Identificador</a> con el folio del colaborador. Además, cada integrante porta un listón de color según su nivel: azul (directores), rojo (equipo legal), negro (gerentes), amarillo (jefes de área), morado (supervisores) y café (todo el demás personal).</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                ¿Qué hacen con mis datos personales?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Se utilizan únicamente para atender tu solicitud y dar seguimiento comercial, conforme a nuestro Aviso de Privacidad. No vendemos ni compartimos tu información con terceros sin tu consentimiento.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                ¿Cómo evito un fraude o suplantación de identidad?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Verifica que los correos provengan del dominio <strong>@emiliocolor.com</strong>, que el teléfono sea el oficial <strong>+52 (56) 5533 3139</strong> y que los pagos se realicen a cuentas de la empresa. Si detectas algo irregular, repórtalo a <a href="mailto:dep.juridico@emiliocolor.com">dep.juridico@emiliocolor.com</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== InkSpire ===== -->
+                    <div class="faq-brand">
+                        <div class="faq-brand-head">
+                            <div class="faq-brand-icon"><i class="fas fa-palette"></i></div>
+                            <div>
+                                <h3>InkSpire™</h3>
+                                <span>Papelería y suministros de oficina</span>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                ¿Es seguro comprar en InkSpire™?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Sí. InkSpire™ es una marca de EmilioColor®, respaldada por más de 45 años de trayectoria del grupo. Todas las compras se documentan con ticket o factura y se realizan únicamente por nuestros canales oficiales de atención.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                ¿Los productos son originales y tienen garantía?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Trabajamos con proveedores y distribuidores autorizados. Cada producto cuenta con garantía por escrito y las solicitudes se atienden conforme a nuestra Política de garantías: acuse de recibo en un máximo de 72 horas y respuesta en otras 72 horas.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                ¿Emiten factura y aceptan pagos formales?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Sí damos factura y aceptamos transferencia y efectivo en punto de venta (por ahora no aceptamos pagos con tarjeta). Todos los cobros se realizan a nombre de la empresa; nunca solicitamos depósitos a cuentas personales.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                ¿Puedo devolver o cambiar un producto?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Sí, dentro del plazo y las condiciones establecidas en nuestra Política de garantías y devoluciones, presentando tu ticket o factura. Para iniciar el proceso escríbenos a <a href="mailto:dep.juridico@emiliocolor.com">dep.juridico@emiliocolor.com</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== AM-SHEV ===== -->
+                    <div class="faq-brand">
+                        <div class="faq-brand-head">
+                            <div class="faq-brand-icon"><i class="fas fa-truck"></i></div>
+                            <div>
+                                <h3>AM-SHEV™</h3>
+                                <span>Compra y venta de camionetas de carga</span>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                ¿Es seguro comprar o vender mi camioneta con AM-SHEV™?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Sí. Contamos con más de 45 años de experiencia en el sector. Cada operación (tanto con personas como con empresas) se formaliza con contrato de compraventa, factura y comprobantes de pago a nombre de la empresa, lo que te da certeza jurídica en todo momento.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                ¿Las unidades cuentan con documentación legal?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Todas las unidades se comercializan con factura de origen, tarjeta de circulación y verificación vigente, y se entregan libres de adeudos, multas y reportes. Verificamos la situación legal de cada unidad antes de la entrega.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                ¿Puedo revisar la unidad con un mecánico de mi confianza?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Sí. Puedes agendar una cita para realizar una revisión física y mecánica con tu propio especialista antes de cerrar la operación. Recomendamos siempre hacerlo para tu total tranquilidad.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                ¿Qué pasa si la unidad presenta adeudos o reporte de robo?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>No comercializamos unidades con reporte de robo, adeudos o documentación irregular. Si después de la entrega se detectara alguna situación de este tipo, la cubrimos conforme al contrato y a nuestra garantía de documentación.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== ClassCloud ===== -->
+                    <div class="faq-brand">
+                        <div class="faq-brand-head">
+                            <div class="faq-brand-icon"><i class="fas fa-laptop-code"></i></div>
+                            <div>
+                                <h3>ClassCloud℠</h3>
+                                <span>Desarrollo de software a medida</span>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                ¿Es seguro contratar software con ClassCloud℠?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Sí. Trabajamos con contrato, alcance y entregables definidos por escrito, acuerdos de confidencialidad (NDA) y ambientes de prueba antes de la puesta en producción. Nada se libera sin tu validación.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                ¿Quién es dueño del código y de la información?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>El código y los datos son propiedad de tu institución conforme a lo establecido en el contrato (licencia de uso o cesión de derechos). No reutilizamos tu información ni la compartimos con terceros.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                ¿Cómo protegen los datos de mis alumnos, docentes o clientes?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Aplicamos cifrado en tránsito y en reposo, control de accesos por roles, respaldos periódicos y buenas prácticas alineadas a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                ¿Qué pasa si algo falla después de la entrega?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Cada proyecto incluye un periodo de garantía y soporte posterior a la entrega. Los errores atribuibles al desarrollo se corrigen sin costo; además ofrecemos planes de mantenimiento y evolución opcionales.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Nota de confianza -->
+                <div class="faq-trust">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <p><strong>Compromiso de seguridad:</strong> ninguna de nuestras marcas solicita pagos con tarjeta para cantidades que superen los $199 pesos (los pagos con tarjeta solo están permitidos para cantidades pequeñas). Ante cualquier duda, verifica en el <a href="#info-adicional">Verificador de Identificador</a>.</p>
+                        <a href="https://wa.me/525655333139?text=Hola,%20quiero%20generar%20un%20reporte%20o%20aclarar%20una%20duda" target="_blank" class="btn-primary">
+                            <i class="fab fa-whatsapp"></i> Generar reporte
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
 
         </div>
     </section>
@@ -1966,6 +2303,39 @@
     </section>
 
     <!-- ============================================
+    INVERSIONISTAS
+    ============================================ -->
+    <section class="inversionistas" id="inversionistas">
+        <div class="container inv-grid">
+            <div class="inv-text">
+                <h3>Invierte en <span>crecimiento</span></h3>
+                <p>
+                    EmilioColor es un grupo sólido con más de 45 años de trayectoria. Ofrecemos oportunidades de inversión
+                    en proyectos de expansión, tecnología y sostenibilidad.
+                </p>
+                <p>
+                    Conoce nuestros indicadores financieros y las proyecciones de crecimiento a mediano plazo.
+                </p>
+                <a href="#contact" class="btn-primary" style="padding:12px 32px;"><i class="fas fa-chart-pie"></i> Solicitar información financiera</a>
+            </div>
+            <div class="inv-stats">
+                <div class="inv-stat">
+                    <div class="num" id="years-trayectoria">45</div>
+                    <div class="label">Años de trayectoria</div>
+                </div>
+                <div class="inv-stat">
+                    <div class="num">12%</div>
+                    <div class="label">Crecimiento anual (últimos 3 años)</div>
+                </div>
+                <div class="inv-stat">
+                    <div class="num">3</div>
+                    <div class="label">Divisiones especializadas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
     CONTACTO
     ============================================ -->
     <section class="contact" id="contact">
@@ -1993,12 +2363,6 @@
                     <div class="service-buttons">
                         <a href="https://wa.me/525655333139?text=Hola%2C%20solicito%20atenci%C3%B3n%20al%20cliente.%20Mi%20folio%20de%20compra%20es%3A%20%5BFOLIO%5D%20y%20requiero%20asesor%C3%ADa%20con%20la%20marca%20proveedora%20%5BMARCA%5D." target="_blank" class="btn-service">
                             <i class="fas fa-exclamation-circle"></i> Servicio al Cliente
-                        </a>
-                        <a href="#" target="_blank" class="btn-service">
-                            <i class="fas fa-tools"></i> Soporte Técnico
-                        </a>
-                        <a href="#info-adicional" class="btn-service">
-                            <i class="fas fa-info-circle"></i> Información Adicional
                         </a>
                     </div>
                 </div>
@@ -2056,13 +2420,12 @@
                 <div class="footer-col">
                     <h5>Mapa del sitio</h5>
                     <a href="#hero">Inicio</a>
-                    <a href="#noticias">Noticias y novedades</a>
                     <a href="#inversionistas">Inversionistas</a>
                     <a href="#ecosystem">Marcas especializadas</a>
                     <a href="#valor">Valor percibido</a>
+                    <a href="#faq">Preguntas frecuentes</a>
                     <a href="#info-adicional">Información Adicional</a>
-                    <a href="#contacto">Contacto</a>
-
+                    <a href="#contact">Contacto</a>
                 </div>
                 <div class="footer-col">
                     <h5>Legal</h5>
@@ -2116,13 +2479,11 @@
             const acceptBtn = document.getElementById('acceptCookies');
             const rejectBtn = document.getElementById('rejectCookies');
 
-            // Si ya aceptó o rechazó, ocultar banner
             if (localStorage.getItem('cookieConsent') !== null) {
                 banner.classList.remove('show');
                 return;
             }
 
-            // Mostrar banner
             banner.classList.add('show');
 
             acceptBtn.addEventListener('click', function() {
@@ -2133,7 +2494,6 @@
             rejectBtn.addEventListener('click', function() {
                 localStorage.setItem('cookieConsent', 'rejected');
                 banner.classList.remove('show');
-                // Podríamos redirigir a política de privacidad, pero lo dejamos así.
                 alert('Has rechazado las cookies. Puedes cambiar tu configuración en cualquier momento desde el aviso de privacidad.');
             });
         })();
@@ -2152,7 +2512,7 @@
             });
         });
 
-        // 3. SCROLL SUAVE (ya está en CSS, pero reforzamos)
+        // 3. SCROLL SUAVE
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
@@ -2165,7 +2525,7 @@
             });
         });
 
-        // 4. FORMULARIO → WHATSAPP (con selección de servicios)
+        // 4. FORMULARIO → WHATSAPP
         const contactForm = document.getElementById('contactForm');
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -2174,7 +2534,6 @@
             const telefono = document.getElementById('telefono').value.trim();
             const mensaje = document.getElementById('mensaje').value.trim();
 
-            // Obtener servicios seleccionados
             const checkboxes = document.querySelectorAll('input[name="servicio"]:checked');
             let servicios = [];
             checkboxes.forEach(cb => servicios.push(cb.value));
@@ -2199,10 +2558,55 @@
             contactForm.reset();
         });
 
-        // 5. Botones "Ver noticia" (simulación)
+        // 5. AÑOS DINÁMICOS DESDE 1981
+        (function() {
+            const anioInicio = 1981;
+            const anioActual = new Date().getFullYear();
+            const aniosExperiencia = anioActual - anioInicio;
+
+            // Actualizar contador en la sección de inversionistas
+            const yearsTrayectoria = document.getElementById('years-trayectoria');
+            if (yearsTrayectoria) {
+                yearsTrayectoria.textContent = aniosExperiencia;
+            }
+
+            // Actualizar badge de AM-SHEV en el ecosistema de marcas
+            const brandYearsAmShev = document.getElementById('brand-years-amshev');
+            if (brandYearsAmShev) {
+                brandYearsAmShev.textContent = `Desde ${anioInicio} · ${aniosExperiencia} años de experiencia`;
+            }
+        })();
+
+        // 6. Botones "Ver noticia" (simulación)
         document.querySelectorAll('.btn-ver').forEach(btn => {
             btn.addEventListener('click', function() {
                 alert('Redirigiendo a la noticia completa (simulación).');
+            });
+        });
+
+        // 7. PREGUNTAS FRECUENTES (ACORDEÓN)
+        document.querySelectorAll('.faq-question').forEach(function(boton) {
+            boton.addEventListener('click', function() {
+                const item = boton.closest('.faq-item');
+                const respuesta = item.querySelector('.faq-answer');
+                const abierto = item.classList.contains('open');
+
+                if (abierto) {
+                    item.classList.remove('open');
+                    respuesta.style.maxHeight = null;
+                    boton.setAttribute('aria-expanded', 'false');
+                } else {
+                    item.classList.add('open');
+                    respuesta.style.maxHeight = respuesta.scrollHeight + 'px';
+                    boton.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // Recalcula la altura de las respuestas abiertas al cambiar el tamaño de ventana
+        window.addEventListener('resize', function() {
+            document.querySelectorAll('.faq-item.open .faq-answer').forEach(function(r) {
+                r.style.maxHeight = r.scrollHeight + 'px';
             });
         });
 
