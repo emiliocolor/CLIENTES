@@ -1104,9 +1104,6 @@
             categoria: DEFAULTS.categoria,
             cursoIndex: DEFAULTS.cursoIndex,
             cantidad: DEFAULTS.cantidad,
-            /* Bandera interna: si es true, la próxima vez que se
-               renderice la galería, se forzará a mostrar como imagen
-               principal la del curso (la primera del arreglo). */
             forceCourseImage: false
         };
 
@@ -1261,15 +1258,6 @@
             if (el) el.textContent = new Date().getFullYear();
         })();
 
-        /* =========================================================
-           3. GALERÍA DINÁMICA
-           ---------------------------------------------------------
-           Orden de las imágenes:
-             1) Imagen del curso (si hay curso seleccionado)
-             2) Imagen de hoja (Raya o Punto)
-           Al cambiar de curso, la imagen del curso se fuerza
-           como imagen principal.
-           ========================================================= */
         var _lastGaleriaSig = '';
 
         function getImagenesActuales() {
@@ -1298,20 +1286,15 @@
 
             var mustForce = state.forceCourseImage && !esSinCurso();
 
-            /* Sólo reconstruimos si cambió el set de imágenes,
-               o si hay que forzar la imagen del curso */
             if (sig === _lastGaleriaSig && !mustForce) return;
             _lastGaleriaSig = sig;
 
-            /* Determinar qué imagen mostrar como principal */
             var currentSrc = mainImage.getAttribute('data-current-src') || (imgs[0] && imgs[0].src);
 
             if (mustForce && imgs.length > 0) {
-                /* Forzamos la imagen del curso (la primera del arreglo) */
                 currentSrc = imgs[0].src;
                 state.forceCourseImage = false;
             } else {
-                /* Conservamos la selección si sigue existiendo */
                 var found = false;
                 for (var i = 0; i < imgs.length; i++) {
                     if (imgs[i].src === currentSrc) { found = true; break; }
@@ -1402,9 +1385,6 @@
 
                     state.categoria = nuevaCat;
                     state.cursoIndex = 0;
-
-                    /* Al cambiar de categoría, forzamos la imagen del curso
-                       (si la nueva categoría NO es "Básica") */
                     state.forceCourseImage = (nuevaCat !== 'basica');
 
                     renderCategorias();
@@ -1453,8 +1433,6 @@
                     var radio = item.querySelector('input');
                     if (radio) radio.checked = true;
 
-                    /* Al seleccionar un curso, forzamos la imagen del curso
-                       como imagen principal (si no es "Básica"). */
                     if (!esSinCurso()) {
                         state.forceCourseImage = true;
                     }
@@ -1510,13 +1488,11 @@
                     : 'Precio por pieza · curso digital incluido';
             }
 
-            /* Curso elegido (etiqueta superior) */
             var chosen = document.getElementById('cursoChosen');
             if (chosen) {
                 chosen.textContent = sinCurso ? 'Sin curso' : getCategoria().nombre;
             }
 
-            /* Etiqueta sobre la imagen principal */
             var tag = document.getElementById('galleryTag');
             if (tag) {
                 tag.style.opacity = sinCurso ? '0' : '1';
@@ -1540,40 +1516,34 @@
             var wa = document.getElementById('waButton');
             if (wa) wa.href = construirWhatsApp(curso, sinCurso, unitario, total);
 
-            /* Galería dinámica según hoja / curso */
             renderGaleria();
 
-            /* Actualizar la URL del navegador con la selección actual */
             actualizarURL();
         }
 
         /* =========================================================
-           9. MENSAJE DE WHATSAPP
+           9. MENSAJE DE WHATSAPP (sin emojis)
            ========================================================= */
         function construirWhatsApp(curso, sinCurso, unitario, total) {
             var lineas = [];
-            lineas.push('¡Hola EmilioColor! 👋');
+            lineas.push('Hola EmilioColor!');
             lineas.push('Quiero pedir el siguiente producto:');
             lineas.push('');
-            lineas.push('📘 *' + PRODUCTO_NOMBRE + '*');
-            lineas.push('• Tipo de hoja: ' + state.hoja);
-            lineas.push('• Curso: ' + (sinCurso ? 'Sin curso digital' : curso.nombre));
+            lineas.push('*' + PRODUCTO_NOMBRE + '*');
+            lineas.push('- Tipo de hoja: ' + state.hoja);
+            lineas.push('- Curso: ' + (sinCurso ? 'Sin curso digital' : curso.nombre));
             if (!sinCurso) {
-                lineas.push('• Categoría: ' + getCategoria().nombre);
+                lineas.push('- Categoría: ' + getCategoria().nombre);
             }
-            lineas.push('• Cantidad: ' + state.cantidad + (state.cantidad === 1 ? ' pieza' : ' piezas'));
-            lineas.push('• Precio unitario: ' + money(unitario) + ' MXN');
-            lineas.push('• *Total: ' + money(total) + ' MXN*');
+            lineas.push('- Cantidad: ' + state.cantidad + (state.cantidad === 1 ? ' pieza' : ' piezas'));
+            lineas.push('- Precio unitario: ' + money(unitario) + ' MXN');
+            lineas.push('- *Total: ' + money(total) + ' MXN*');
             lineas.push('');
-            lineas.push('¿Me confirman disponibilidad y forma de pago? ¡Gracias!');
+            lineas.push('Me confirman disponibilidad y forma de pago? Gracias.');
 
             return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(lineas.join('\n'));
         }
 
-        /* =========================================================
-           INICIALIZACIÓN
-           Orden: 1) leer URL → 2) pintar UI → 3) sincronizar → 4) update
-           ========================================================= */
         try {
             leerURL();
             renderCategorias();
