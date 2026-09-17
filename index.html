@@ -60,7 +60,7 @@
             "availableLanguage": ["Spanish", "English"]
         },
         "sameAs": [
-            "https://www.facebook.com/people/Emilio-Color/61558765116854/",
+            "https://www.facebook.com/people/Inkspire-EmilioColor/pfbid0xr8rANSrfc6dYWJLWFZYb9mKNLc6d8P66f6pSeQGzksXCWEfps2AsQY22WWnJruyl/",
             "https://www.instagram.com/emiliocolorcom/"
         ]
     }
@@ -631,6 +631,7 @@
             align-items: stretch;
         }
 
+        /* ===== TARJETA DE MARCA (SIN ANIMACIONES) ===== */
         .bv-card {
             position: relative;
             display: flex;
@@ -641,30 +642,6 @@
             padding: 32px 26px 28px;
             box-shadow: var(--shadow-sm);
             overflow: hidden;
-            transition: 0.3s;
-        }
-
-        .bv-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--blue-primary), #60A5FA);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.35s ease;
-        }
-
-        .bv-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--blue-light);
-        }
-
-        .bv-card:hover::before {
-            transform: scaleX(1);
         }
 
         .bv-logo {
@@ -925,15 +902,12 @@
             box-shadow: var(--shadow-sm);
         }
 
-
         .faq-trust p {
             margin: 0;
             font-size: 0.92rem;
             color: var(--text-muted);
         }
 
-        /* Botón "Generar reporte": reutiliza el estilo de btn-primary,
-           solo se ajusta el margen superior para separarlo del texto */
         .faq-trust .btn-primary {
             margin-top: 14px;
         }
@@ -2413,7 +2387,7 @@
                     </div>
                     <p>Grupo comercial comprometido con la excelencia en transporte, software y papelería.</p>
                     <div class="footer-socials">
-                        <a href="https://www.facebook.com/people/Emilio-Color/61558765116854/" aria-label="Facebook de EmilioColor"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.facebook.com/people/Inkspire-EmilioColor/pfbid0xr8rANSrfc6dYWJLWFZYb9mKNLc6d8P66f6pSeQGzksXCWEfps2AsQY22WWnJruyl/" aria-label="Facebook de EmilioColor"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/emiliocolorcom/" aria-label="Instagram de EmilioColor"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
@@ -2603,8 +2577,7 @@
             });
         });
 
-        // Recalcula la altura de las respuestas abiertas al cambiar el tamaño de ventana
-        window.addEventListener('resize', function() {
+¿        window.addEventListener('resize', function() {
             document.querySelectorAll('.faq-item.open .faq-answer').forEach(function(r) {
                 r.style.maxHeight = r.scrollHeight + 'px';
             });
